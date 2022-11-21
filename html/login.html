@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v6.2.0/css/pro.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body style="font-family: Montserrat;">
+    <div id="preloaderlogin"></div>
+
+    <section class=" justify-content-center form my-4 mx-5">
+        <div class="container  justify-content-center  align-items-center ">
+            <div class="row rowg g-0 ">
+                <div class="  col-lg-5 col-md-6 col-12 ">
+                    <img src="../pic/boof.jpeg" class=" img-fluid h-100  d-none d-lg-block" alt="">
+                </div>
+                <div class="   col-lg-7 px-md-5 px-3 pt-5 ">
+                    <h1 class=" pt-5 pb-4 fw-bold d-flex justify-content-center  align-items-center justify-content-md-start"
+                        style="color:#1B9476 ;">
+                        CALFOOD <i class="opacity-100 fa-light fa-plate-utensils fa-flip p-2"
+                            style="--fa-animation-duration: 5s;"></i>
+                    </h1>
+                    <h4 class="pb-2">Sign into your account</h4>
+                    <form>
+                        <div class="form-row pb-4">
+                            <div class="col-lg-10 col-sm-12 m-0">
+
+
+
+
+
+                                <div class=" row">
+                                    <div class="col form-floating mb-3">
+                                        <input type="email" class="form-control " id="emailSi" placeholder="." required
+                                            style="padding-left: 21px;">
+                                        <label for="emailSi"><i class="fa-light fa-envelope"></i> Email
+                                            address</label>
+                                    </div>
+                                </div>
+
+                                <div class=" row">
+                                    <div class="col-11 form-floating mb-3 ">
+                                        <input type="password" class="form-control " id="passSi" placeholder="."
+                                            required style="padding-left: 21px;" required>
+                                        <label for="passSi"><i class="fa-light fa-lock "></i> Password
+                                        </label>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center p-0">
+                                        <i class="bi bi-eye-slash w3-xlarge" id="lock"></i>
+                                    </div>
+                                </div>
+
+
+                                <button type="submit" id="BtnSignIn"
+                                    class="btn btn-outline-success w-50 mb-3 d-flex justify-content-center "
+                                    style="overflow:hidden;">
+                                    <span id="flecheslide" class="position-relative "><i
+                                            class="bi bi-box-arrow-in-right fa-beat-fade"
+                                            style="--fa-beat-fade-opacity: 0.1; --fa-beat-fade-scale: 1.075;"></i></span>
+                                    <span id="signslide" class="position-relative" style="top:0px">Sign in</span>
+                                </button>
+                                <div class="  align-items-center">
+                                    <div>
+                                        <p href="signUp.html" class="mb-0 text text-decoration-none   "
+                                            style="color: black; " id="already">Don't have an
+                                            account ?
+                                            <a href="signUp.html" id="style-2" data-replace="&#xf234"
+                                                style="text-align: center; font-family: 'Montserrat', sans-serif, FontAwesome"
+                                                style="color:rgb(29, 208, 53);" class="linkicon"><span
+                                                    class="text-success">sign up</span>
+                                            </a>
+                                        </p>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                           <!-- <hr class="text-secondary opacity-100"> -->
+                            <div class="pt-3">
+                                <div class="text-divider pb-2"><a id="style-2" data-replace="&#xf084"
+                                        style="text-align: center; cursor: pointer;" style="color:rgb(6, 237, 37);"
+                                        class="justify-content-center d-flex" data-bs-whatever="@mdo"><span
+                                            id="forgotPass" data-bs-toggle="modal" data-bs-target="#exampleModal">Forgot
+                                            your password
+                                            ?</span>
+                                    </a>
+                                </div>
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-whatever="@mdo">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Password
+                                                    reset</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <label for="recipient-name" class="col-form-label ">Enter your
+                                                            email:</label>
+                                                        <input type="text" class="form-control ps-0"
+                                                            id="recipient-name">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-outline-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-outline-success"
+                                                    id="BtnRestorePass">Send restore password message</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="text-divider pb-5">or sign up with</div>
+                        <div class="pb-5 d-flex justify-content-center align-items-center ">
+                            <a id="BtnGoogleSignup" style="border-radius: 40%;"><i
+                                    class="btn fa-brands fa-google d-flex justify-content-center align-items-center fa-2x  opacity-75"
+                                    style="outline: none; "></i></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <div id="notification-area">
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous"></script>
+        <script src="../js/login.js" type="module"></script>
+
+</body>
+
+<!-- <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyAs8wqzfMoB1fx1cbwKDUJ5HH9pZmGeaSM",
+        authDomain: "iot-project-of-malki.firebaseapp.com",
+        projectId: "iot-project-of-malki",
+        storageBucket: "iot-project-of-malki.appspot.com",
+        messagingSenderId: "1042946587373",
+        appId: "1:1042946587373:web:600231fca71a206df16ae4",
+        measurementId: "G-4B1MKYBMK4",
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    import {
+        getDatabase,
+        set,
+        ref,
+        onValue,
+    } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+</script> -->
+
+<script type="module">
+
+
+
+</script>
+
+</html>

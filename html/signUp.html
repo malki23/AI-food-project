@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v6.2.0/css/pro.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+
+
+    <div id="preloadersignup"></div>
+
+    <!-- container pb-5 p-0 p-sm-1   justify-content-center  pt-5 pt-md-5 align-items-center -->
+    <section class=" justify-content-center form  my-4 mx-5" id="form1">
+        <div class="container d-flex  justify-content-center pb-3  align-items-center ">
+            <div class="row rowg mt-5 mt-lg-0 g-0 px-md-5 px-lg-0">
+                <div class=" col-xl-5 col-lg-6 col-md-5 col-12 ">
+                    <img src="../pic/boof.jpeg" class="img-fluid  h-100 d-none d-lg-block" alt="">
+                </div>
+                <div class="  col-xl-7 col-lg-6 px-md-7 px-3 ps-lg-5 pt-lg-5  ">
+                    <h1 style="color:#1B9476  "
+                        class=" pt-lg-3 pt-3 pb-lg-4 fw-bold d-flex align-items-center justify-content-center justify-content-md-start">
+                        CALFOOD <i class="opacity-100 fa-light fa-plate-utensils fa-flip p-2"
+                            style="--fa-animation-duration: 5s;"></i></h1>
+                    <h4 class="pb-2">Create your account</h4>
+                    <form>
+                        <div class="form-row pb-4 " name="form1">
+                            <div class="col-lg-10  col-sm-12  col-12 m-0    ">
+                                <div class=" mb-0 row ">
+                                    <div class="col form-floating">
+                                        <input type="email" class="form-control " name="text1" id="emailSu"
+                                            onkeyup="ValidateIndicator();" placeholder="." style="padding-left: 21px;">
+                                        <span class="indicator"></span>
+                                        <label for="emailSU"><i class="fa-light fa-envelope"></i> Email
+                                            address</label>
+                                    </div>
+                                </div>
+                                <div class="invalidTextOutput mb-3 " style="padding-left: 21px; height: 15px;"></div>
+                                <div class=" mb-3 row ">
+                                    <div class="col form-floating">
+                                        <input type="text" class="form-control " id="firstNameSu" placeholder="."
+                                            style="padding-left: 21px;" onkeyup="NameNotEmpty();">
+                                        <label for="fisrtNameSU"><i class="fa-light fa-user"></i> First name</label>
+                                    </div>
+                                </div>
+                                <div class=" mb-3 row ">
+                                    <div class="col form-floating">
+                                        <input type="text" class="form-control " id="lastNameSu" placeholder="."
+                                            style="padding-left: 21px;" onkeyup="NameNotEmpty();">
+                                        <label for="lastNameSU"><i class="fa-light fa-user"></i> Last name</label>
+                                    </div>
+                                </div>
+                                <div class=" row">
+                                    <div class="col-11 form-floating  ">
+                                        <input type="password" class="form-control " id="passSu" placeholder="."
+                                            style="padding-left: 21px;"   onkeyup="checkPasswordValueText()">
+                                        <label for="passSU"><i class="fa-light fa-lock "></i> Password
+                                        </label>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center p-0">
+                                        <i class="bi bi-eye-slash w3-xlarge" id="lock"></i>
+                                    </div>
+                                </div>
+                                <div class="invalidPassPattern  " style="padding-left: 21px; height: auto;"></div>
+                                <div class=" row" >
+                                    <div class="col-11 form-floating  ">
+                                        <input type="password" class="form-control " id="confirmPassSu" placeholder="."
+                                            onkeyup="PassNoMatch();" style="padding-left: 21px;" required>
+                                        <label for="confirmPassSU"><i class="fa-light fa-lock"></i> Confirm password
+                                        </label>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center p-0">
+                                        <i class="bi bi-eye-slash w3-xlarge" id="lock2"></i>
+                                    </div>
+                                </div>
+                                <div class="PassMatchTextOutput pb-3 " style="padding-left: 21px; height: 30px;"></div>
+
+
+                                <button type="button" id="signUpUserBtn"
+                                    class="btn btn-outline-success w-50 mb-4 d-flex justify-content-center "
+                                    style="overflow:hidden;">
+                                    <span id="iconBtn" class="position-relative "><i
+                                            class="bi bi-person-plus fa-beat-fade"
+                                            style="--fa-beat-fade-opacity: 0.1; --fa-beat-fade-scale: 1.075;"></i></span>
+                                    <span id="signUpTitle" class="position-relative" style="top:0px">Sign up</span>
+                                </button>
+                                <div class=" d-flex  justify-content-between">
+                                    <div>
+                                        <p href="signUp.html" class=" text text-decoration-none   "
+                                            style="color: black; " id="already">Already have an
+                                            account ?
+                                            <a href="login.html" id="style-2" data-replace="&#xf090"
+                                                style="text-align: center; font-family: 'Montserrat', sans-serif, FontAwesome"
+                                                style="color:rgb(29, 208, 53);" class="linkicon"><span
+                                                    class="text-success">sign in</span>
+                                            </a>
+                                        </p>
+
+                                    </div>
+                                    <a href="../html/index.html" class="text-success"><i class="fa-light fa-house"></i>
+                                        Home </a>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <!-- <script src="../js/FBcdn.js" type="module"></script> -->
+    <script src="../js/signup.js " type="module"></script>
+
+    <div id="notification-area">
+</body>
+
+
+
+
+<script type='module' scr='./signup.js'>
+
+
+    import { ValidateIndicator } from '../js/signup.js';
+    window.ValidateIndicator = ValidateIndicator;
+
+    import { PassNoMatch } from '../js/signup.js';
+    window.PassNoMatch = PassNoMatch;
+
+    import { NameNotEmpty } from '../js/signup.js';
+    window.NameNotEmpty = NameNotEmpty;
+
+    import {  checkPasswordValueText } from '../js/signup.js';
+    window. checkPasswordValueText =  checkPasswordValueText;
+
+
+
+</script>
+
+</html>

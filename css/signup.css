@@ -1,0 +1,650 @@
+.color-pattern {
+  color: #124660;
+  color: #1b9476;
+  color: #8bd59e;
+  color: #c7dbc2;
+  color: #f4ebd6;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#reghere:hover {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes already {
+  from {
+    font-size: 75%;
+  }
+  to {
+    font-size: 80%;
+  }
+}
+
+@keyframes alreadyafter {
+  from {
+    font-size: 80%;
+  }
+  to {
+    font-size: 75%;
+  }
+}
+
+#reghere:hover {
+  animation: already 1s forwards;
+}
+#reghere {
+  animation: alreadyafter 1s;
+}
+
+@keyframes slideSignup {
+  from {
+    opacity: 10%;
+  }
+  to {
+    opacity: 100%;
+    display: block;
+  }
+}
+
+@keyframes slideSignupfleche {
+  from {
+    opacity: 100%;
+  }
+  to {
+    display: none;
+  }
+}
+
+@keyframes slideSignupflecheafter {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+    display: block;
+  }
+}
+
+@keyframes slideSignupafter {
+  from {
+    opacity: 100%;
+  }
+  to {
+    display: none;
+  }
+}
+#signUpUserBtn #iconBtn {
+  /* animation: slideSignupflecheafter 3s;
+  animation-fill-mode: forwards; */
+  display: none;
+}
+
+#signUpUserBtn:hover #signUpTitle {
+  /* animation: slideSignup 3s;
+  animation-fill-mode: forwards; */
+  display: none;
+}
+
+#signUpUserBtn:hover #iconBtn {
+  /* animation: slideSignupfleche 3s;
+  animation-fill-mode: forwards; */
+  opacity: 100%;
+  display: block;
+}
+
+#signUpUserBtn #signUpTitle {
+  /* animation: slideSignupafter 3s;
+  animation-fill-mode: forwards; */
+  display: block;
+}
+/* -------------------------------------------------------------------------------- */
+#BtnSignIn #flecheslide {
+  /* animation: slideSignupflecheafter 3s;
+  animation-fill-mode: forwards; */
+  display: none;
+}
+
+#BtnSignIn:hover #signslide {
+  /* animation: slideSignup 3s;
+  animation-fill-mode: forwards; */
+  display: none;
+}
+
+#BtnSignIn:hover #flecheslide {
+  /* animation: slideSignupfleche 3s;
+  animation-fill-mode: forwards;
+  opacity: 100%; */
+  display: block;
+}
+
+#BtnSignIn #signslide {
+  /* animation: slideSignupafter 3s;
+  animation-fill-mode: forwards; */
+  display: block;
+}
+
+body {
+  background: rgb(171, 212, 171);
+  background-image: url(../pic/bglog.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.rowg {
+  background: rgba(250, 250, 252, 0.4);
+
+  border-radius: 30px;
+  box-shadow: 12px 12px 22px rgb(128, 128, 128);
+}
+.form-control {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.modal-content{
+  background: rgba(250, 250, 252, 0.9);
+}
+
+.form-control {
+  border-radius: 0%;
+  outline: none;
+  border: none;
+  overflow: visible;
+  background: transparent;
+  border-bottom: 1px solid #1b9476;
+  box-shadow: none;
+}
+
+
+.form-control:focus {
+  border-radius: 0%;
+  outline: none;
+  border: none;
+  overflow: visible;
+  background: transparent;
+  border-bottom: 2px solid #1b9476;
+  box-shadow: none;
+}
+
+.form-control:focus #lock {
+ 
+  border-bottom: 2px solid #1b9476;
+
+}
+
+.form-control:-internal-autofill-selected {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+/* --------------------------------------------------------------------------------------- */
+.linkicon {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+.linkicon::before,
+.linkicon::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  left: 0;
+}
+.linkicon::before {
+  background-color: #1b9476;
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.linkicon::after {
+  content: attr(data-replace);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transform: translate3d(200%, 0, 0);
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+  color: #156f59;
+}
+
+.linkicon:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+.linkicon:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+
+.linkicon span {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.linkicon:hover span {
+  transform: translate3d(-200%, 0, 0);
+}
+
+/* Presentational Styles */
+
+a {
+  text-decoration: none;
+  color: #1b9476;
+  vertical-align: top;
+}
+/* ------------------------------------------------------------------------------------ */
+
+img {
+  opacity: 0.9;
+}
+
+body {
+  font-family: "Montserrat", sans-serif ;
+  width: 100%;
+}
+
+
+
+
+i {
+  opacity: 0.4;
+  padding-right: 3px;
+}
+
+#preloadersignup {
+  background: #fffafc url(../pic/poil.gif) no-repeat center
+    center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  background-size: 30%;
+  z-index: 100;
+  top: 0;
+}
+
+#preloaderlogin {
+  background: #fffafc url(../pic/poil.gif) no-repeat center
+    center;
+  height: 100vh;
+  width: 100%;
+  background-size: 30%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+}
+
+label{
+  opacity: 0.6;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000000s ease-in-out 0s;
+}
+
+#lock {
+  cursor: pointer;
+ 
+}
+#lock2 {
+  cursor: pointer;
+}
+
+#lock:hover{
+
+  color: #156f59;
+
+}
+
+#lock2:hover{
+
+  color: #156f59;
+
+}
+
+#forgotPass:hover{
+
+  color:#1b9476;
+}
+
+#notification-area {
+  position:fixed;
+  top:0px;
+  right:10px;
+  width: 350px;
+  height:10vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  
+}
+
+.form-control{
+  z-index: 1000;
+}
+
+
+#notification-area .notification {
+  position:relative;
+  padding:15px 10px;
+  min-width: 380px;
+  font-family:"montserrat";
+  font-size:14px;
+  font-weight:600;
+  border-radius:5px;
+  margin:5px 0px;
+  opacity:0;
+  left:20px;
+
+  position: absolute;
+  right: 0;
+  top: 26px;
+
+  animation:showNotification 500ms ease-in-out forwards;
+}
+
+
+
+@keyframes showNotification {
+  
+    0%{
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    40%{
+      transform: translateX(-10%);
+    }
+    80%{
+      transform: translateX(0%);
+    }
+    100%{
+      transform: translateX(-10px);
+      opacity: 1;
+    
+  }
+}
+/* .notification.info {
+  border-left: 8px solid #ffa502;
+} */
+
+#notification-area .notification.success {
+  background:#baffba;
+  
+  border-left: 8px solid #389838;
+  color: #019d06;
+
+}
+
+#notification-area .notification.success::before {
+  font-family: "FontAwesome";
+  color: #019d06;
+  content: "\f058";
+  padding-right: 6px;
+  display: inline-block;
+  
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+
+#notification-area .notification.info {
+  background:#ffda9b;
+  border-left: 8px solid #ffa502;
+ color: #ce8500;
+}
+
+
+#notification-area .notification.info::before {
+  font-family: "FontAwesome";
+  color: #ce8500;
+  content: "\f06a";
+  padding-right: 6px;
+  display: inline-block;
+  
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+
+
+
+#notification-area .notification.error {
+  background:rgba(251, 210, 196, 1);
+  border-left: 8px solid #ff0202;
+  color: #ff0202;
+
+}
+
+#notification-area .notification.error::before {
+  font-family: "FontAwesome";
+  color: #ff0202;
+  content: "\f00d";
+  padding-right: 6px;
+  display: inline-block;
+  
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+.modal.fade.show {
+  backdrop-filter: blur(5px);
+}
+
+#form1.valid .indicator{
+
+  background-color:#0f0 ;
+  box-shadow: 0 0 5px #0f0,
+              0 0 10px #0f0,
+              0 0 20px #0f0,
+              0 0 40px #0f0;
+
+}
+
+#form1.invalid .indicator{
+
+  background-color:#f00 ;
+  box-shadow: 0 0 5px #f00,
+              0 0 10px #f00,
+              0 0 20px #f00,
+              0 0 40px #f00;
+
+}
+
+#form1 .indicator{
+
+  position: absolute;
+  top: 30px;
+  right: 20px;
+width: 10px;
+height: 10px;
+background: #555;
+border-radius: 50%;
+}
+
+#form1.invalidText .invalidTextOutput::before{
+
+  
+
+  content: "Invalid email address"; 
+  color: red;
+  font-size: 0.9rem;
+
+}
+
+#form1 .invalidTextOutput{
+
+
+width: 300px;
+height: auto;
+margin-bottom: 0rem!important;
+}
+
+#form1.PassMatchText .PassMatchTextOutput::before{
+
+  
+
+  content: "Password no match"; 
+  color: red;
+  font-size: 0.9rem;
+
+}
+
+#form1 .PassMatchTextOutput{
+
+
+  right: 20px;
+width: 300px;
+height: auto;
+margin-bottom: 1rem!important;
+
+}
+
+#form1.pass8 .invalidPassPattern::before{
+
+  
+
+  content: "Password must be at least 8 characters"; 
+  color: red;
+  font-size: 0.9rem;
+
+}
+
+#form1.passNum .invalidPassPattern::before{
+
+  
+
+  content: "Password must contain at least one number"; 
+  color: red;
+  font-size: 0.9rem;
+
+}
+
+#form1.passLower .invalidPassPattern::before{
+
+  
+
+  content: "Password must contain at least one lowercase letter"; 
+  color: red;
+  font-size: 0.9rem;
+
+}
+
+#form1.passUpper .invalidPassPattern::before{
+
+  
+
+  content: "Password must contain at least one uppercase letter"; 
+  color: red;
+  font-size: 0.9rem;
+
+}
+
+
+#form1 .invalidPassPattern{
+
+
+  width: auto;
+  height: auto;
+  margin-bottom: 1rem!important;
+  }
+
+
+
+  .text-divider {
+    display: flex;
+    align-items: center;
+    --text-divider-gap: 1rem; 
+  }
+  
+  .text-divider::before,
+  .text-divider::after {
+    content: '';
+    height: 1px;
+    background-color: silver;
+    flex-grow: 1;
+  }
+  
+  .text-divider::before {
+    margin-right: var(--text-divider-gap);
+  }
+  
+  .text-divider::after {
+    margin-left: var(--text-divider-gap);
+  }
+
+ .form-control:focus label{
+
+  color: #156f59;
+ }
+
+ 
+
+ @keyframes googleHover {
+   0%{
+   }
+   30%{
+    color: rgb(236, 85, 85)  ;
+   }
+   100%{
+    color: rgb(236, 85, 85) ;
+    box-shadow: 0 12px 0px 1px rgb(213, 212, 212),3px -4px 11px 6px rgba(102, 102, 102, 0.458);
+   transform: translateY(-8px);
+
+   }
+   
+ }
+
+
+ @keyframes googleHoverAfter {
+  0%{
+ box-shadow: 0 12px 0px 1px rgb(213, 212, 212),3px -4px 11px 6px rgba(102, 102, 102, 0.458);
+   /* box-shadow: 4px -4px 3px 4px rgba(102, 102, 102, 0.738); */
+transform: translateY(-8px) ;
+color: rgb(236, 85, 85) ;
+}
+  10%{
+    color: rgb(236, 85, 85) ;
+
+  }
+  100%{
+    box-shadow: 0 0 0 -1px rgb(213, 212, 212);
+    transform: translateY(0px) ;
+  }
+  
+}
+ 
+
+
+#BtnGoogleSignup{
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  animation :googleHoverAfter 0.6s forwards;
+}
+
+#BtnGoogleSignup:hover{
+
+  animation :googleHover 0.6s forwards;
+}
+

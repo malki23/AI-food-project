@@ -1,0 +1,11 @@
+#preloadercontact{
+    background: #ffffff url(../pic/contact.gif) no-repeat center
+      center;
+    height: 100vh;
+    width: 100%;
+    background-size: 30%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+  }
+  

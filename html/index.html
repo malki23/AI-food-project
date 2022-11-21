@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v6.2.0/css/pro.min.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+  <div id="preloader"></div>
+
+  <nav class="navbar navbar-expand-lg bg-gradient" style="background-color: #8bd59e ; padding: 4px; font-size: small;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">CALFOOD <i class="fa-light fa-plate-utensils fa-flip"
+          style="--fa-animation-duration: 5s;"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!--row -------------------------------------------------------------------------------->
+
+        <!--col1--------------------------------------------------------------------------->
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My meals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact us</a>
+          </li>
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Account
+            </a>
+            <ul class="dropdown-menu w-25 " style="background-color: rgb(253, 251, 251,0.6);">
+              <li><a class="d-flex justify-content-between align-items-center dropdown-item" href="login.html">Sign in
+                  <i class="align-items-end fa-light fa-arrow-right-to-bracket"></i></a></li>
+
+              <a class="d-flex justify-content-between align-items-center dropdown-item" href="signUp.html">Sign up <i
+                  class=" in fa-light fa-user-plus"></i></a>
+          </li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li>
+            <a class="d-flex justify-content-between align-items-center dropdown-item " href="#">account info <i
+                class="fa-light fa-circle-info"></i></a>
+          </li>
+        </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+        </ul>
+
+        <!--col2--------------------------------------------------------------------------->
+
+        <!-- <form class="d-flex justify-content-center align-content-center" role="search">
+          <input class="form-control d-flex" type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn   " type="submit" style="outline: none;">
+            <i class="fa-light fa-magnifying-glass"></i>
+          </button>
+        </form> -->
+
+        <a href="profile.html" class="d-flex justify-content-center align-items-center " data-bs-toggle="modal"
+          data-bs-target="#exampleModalInfo" data-backdrop="false">
+
+          <p class="nav-link d-flex justify-content-center align-items-center pe-3 m-0 " id="displayNameHolder">User
+          </p>
+          <div class=""><img style="width: 35px;  height: 35px;  border-radius: 50%" id="photoHolder"
+              src="../pic/profile-placeholder-3.jpg" alt="invalid">
+            <span class="position-absolute  p-2  d-none d-lg-block  rounded-circle badgeM badge "
+              style="top: 27px; right: 40px; ">
+              <span class="visually-hidden">New alerts</span>
+          </div>
+        </a>
+
+        <div class="modal fade bg-transparent " id="exampleModalInfo" tabindex="-1" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header p-0">
+                <div class="d-flex justify-content-center align-items-center" id="exampleModalLabel">
+                  <img style="  border-radius: 50% ; width: 25px; height: 25px;" id="photoHolder1"
+                    src="../pic/profile-placeholder-3.jpg" alt="invalid" class="ms-3 ">
+                  <h4 class=" p-3  m-0" id="displayNameHolder1">
+                    Not connected</h4>
+                </div>
+                <button type="button" class="btn-close pe-5" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>email: <span id="email1" class="text-primary" style="font: size 10px; ">no user connceted</span></p>
+                <p>name: <span id="displayNameHolder2" class="text-primary" style="font: size 10px;">no user
+                    connceted</span></p>
+              </div>
+              <div class="modal-footer">
+                <a href="edit.html" class="btn btn-outline-primary col">modify account</a>
+                <a href="login.html" class="btn btn-outline-danger" id="logOut">logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </nav>
+
+  <div class="spacernavbas layernavbas"></div>
+  <!-- // {hovered ? 5s : 2s} -->
+  <section class="bg-white  sec1 p-3" style="color: #1B9476; ">
+    <h1 class="text-center mb-3 anim1">Welcome to CALFOOD™</h1>
+    <div class="d-flex justify-content-center align-items-center mb-3 "> <i
+        class="fa-regular fa-plate-utensils fa-10x fa-flip" 
+        style="--fa-animation-duration:5s; "></i>
+    </div>
+    <p class="form-text mb-5 anim2" style="color: #1B9476;">Understand what's in your plate </p>
+    <a href="#secdeux" style="color: #1B9476;"> <i class="fa-regular fa-arrow-down fa-5x fleche "></i></a>
+  </section>
+
+  <div class="spacer layerWtoG"></div>
+
+  <section id="secdeux" class=" px-3 px-md-5  py-0 d-grid"
+    style="background-color: #1B9476; color: #C7DBC2; height: 500px;">
+    <div class="row d-flex justify-content-center align-items-center ">
+
+      <div class="col-12 col-md-6 pb-3  reveal fade-left ">
+        <h1 class="text-center text-md-start pb-md-1 pb-3">What is CALFOOD ?</h1>
+        <p>Thanks to multiple technology tools, CALFOOD is able to calculate all the exact food informations about your
+          meal and send you all the nutriments you have in your plate
+          like the quantity of protein , lipid , glucide and much more. <br> Just by taking a single picture and the
+          weight of your plate, CALFOOD already now what's in your plate.</p>
+      </div>
+      <div class="col-12 col-md-6 d-flex justify-content-center align-items-center reveal fade-right">
+        <i class="fa-regular fa-pan-food fa-10x fa-spin" style="--fa-animation-duration: 5s;"></i>
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer layerVtoB "></div>
+
+  <section class=" layermontagne spacermontagne reveal p-0" style="background-color: #F4EBD6; color: #124660;">
+    <h1>How to use it ?</h1>
+    <p class="p-5 pt-2 text-center">(dont worry its simple scroll down to understand)</p>
+  </section>
+
+
+
+  <section class=" px-3 px-md-5  py-0 d-grid" style="background-color: #124660;">
+    <div class="row " style="color: #f4ebd6;">
+      <div class="col-12 col-md-6 justify-content-center align-items-center reveal fade-left">
+        <h1 class="text-center text-md-start pb-md-1 pb-3">Explanation</h1>
+        <p class="reveal pb-3">At first open the application and if you're already not log in sign up it very quick.
+          After
+          that
+          go to my meal and click on create a new meal then turn on the CALLFOOD machine and put your plate on the
+          basement . When you are ready click on scan my food and wait for a few seconds. <br> Thats it you just receive
+          your
+          information ! </p>
+      </div>
+      <div class="col-md-6 col-12 d-flex justify-content-center align-items-center reveal fade-right">
+        <i class="fa-light fa-camera-retro fa-8x fa-beat-fade"
+          style="--fa-beat-fade-opacity: 0.2; --fa-beat-fade-scale: 1.1; --fa-animation-duration: 3s;"></i>
+      </div>
+    </div>
+  </section>
+
+  <div class="layerBtoW spacer"></div>
+
+
+
+
+  <section class="bg-white wave3" style="color: #124660;">
+    <h1 class="reveal">Let's begin </h1>
+    <p class="reveal">Sign in to create your first meal !</p>
+  </section>
+
+
+
+
+
+
+
+  <!-- Remove the container if you want to extend the Footer to full width. -->
+  <div class=" ">
+
+    <div class="">
+      <!-- Footer -->
+      <footer class="text-center text-white" style="background-color: #1d729c; ">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: CTA -->
+          <div class="">
+            <p class="d-flex justify-content-center align-items-center">
+              <span class="me-3">Register for free</span>
+              <a href="../html/signUp.html" class="btn btn-outline-light btn-rounded "> Sign up !</a>
+            </p>
+          </div>
+          <!-- Section: CTA -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: #124660; ;">
+          © 2022 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">calfood.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+    </div>
+
+  </div>
+  <!-- End of .container -->
+
+
+
+
+</body>
+
+
+<script src="./index.js" type="module">
+
+
+import { changeTime } from '../js/index.js';
+    window.changeTime = changeTime;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../js/login.js"></script>
+<script src="../js/index.js" type="module"> </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</html>
