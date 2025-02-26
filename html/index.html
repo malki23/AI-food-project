@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bootstrap demo</title>
+  <title>Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
@@ -12,135 +12,145 @@
   <link rel="stylesheet" href="../css/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap" rel="stylesheet">
+  <link rel="icon" style="border: radius 50px" id="photoHolder2">
+
 </head>
 
-<body>
+<body class="bgday" style="user-select: none; overflow-x: hidden; ">
 
 
+  <div class="area " id="cube">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
 
-  <div id="preloader"></div>
+  <!-- snow all -------------------------------------------------------------------------------------------------------->
 
-  <nav class="navbar navbar-expand-lg bg-gradient" style="background-color: #8bd59e ; padding: 4px; font-size: small;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">CALFOOD <i class="fa-light fa-plate-utensils fa-flip"
-          style="--fa-animation-duration: 5s;"></i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!--row -------------------------------------------------------------------------------->
+  <div id="snowAll" style="display: none; z-index: 1000000;" class="h-100  position-fixed jus">
+    <div id="snowL1"><i class="fa-light fa-snowflake fa-flip "
+        style="color: rgb(172, 223, 237) ;--fa-animation-duration: 1.2s; --fa-flip-x: 1; --fa-flip-y: 0;  ; "></i></div>
+    <div id="snow1"><i class="fa-light fa-snowflakes fa-flip"
+        style="color: rgb(172, 223, 237) ;--fa-animation-duration: 0.8s; --fa-flip-x: 1; --fa-flip-y: 0;  ; "></i></div>
+    <div id="snowL2"><i class="fa-light fa-snowflake fa-flip"
+        style="color: rgb(172, 223, 237) ;--fa-animation-duration: 1.4s; --fa-flip-x: 1; --fa-flip-y: 0;  ; "></i></div>
+    <div id="snowL3"><i class="fa-light fa-snowflakes fa-flip"
+        style="color: rgb(172, 223, 237) ;--fa-animation-duration: 0.8s; --fa-flip-x: 1; --fa-flip-y: 0;  ; "></i></div>
+    <div id="snowL4"><i class="fa-light fa-snowflake fa-flip"
+        style="color: rgb(172, 223, 237) ;--fa-animation-duration: 1.2s; --fa-flip-x: 1; --fa-flip-y: 0;  ; "></i></div>
+    <div id="snow2"><i class="fa-light fa-snowflake fa-flip"
+        style="color: rgb(172, 223, 237) ;--fa-animation-duration: 0.8s; --fa-flip-x: 1; --fa-flip-y: 0;  ; "></i></div>
+    <div id="snowL5"><i class="fa-light fa-snowflakes fa-flip"
+        style="color: rgb(172, 223, 237) ;--fa-animation-duration: 1.5s; --fa-flip-x: 1; --fa-flip-y: 0;  ; "></i></div>
+    <div id="snow3"><i class="fa-light fa-snowflake fa-flip"
+        style="color: rgb(172, 223, 237) ;--fa-animation-duration: 0.8s; --fa-flip-x: 1; --fa-flip-y: 0;  ; "></i></div>
+    <div id="snowL6"><i class="fa-light fa-snowflakes fa-flip"
+        style="color: rgb(172, 223, 237) ;--fa-animation-duration: 1.8s; --fa-flip-x: 1; --fa-flip-y: 0;  ; "></i></div>
+    <div id="snow4"><i class="fa-light fa-snowflake fa-flip"
+        style="color: rgb(172, 223, 237) ;--fa-animation-duration: 0.8s; --fa-flip-x: 1; --fa-flip-y: 0;  ; "></i></div>
+  </div>
 
-        <!--col1--------------------------------------------------------------------------->
+  <!-- notif arae ----------------------------------------------------------------------------------------------------------- -->
 
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">My meals</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact us</a>
-          </li>
-          <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Account
-            </a>
-            <ul class="dropdown-menu w-25 " style="background-color: rgb(253, 251, 251,0.6);">
-              <li><a class="d-flex justify-content-between align-items-center dropdown-item" href="login.html">Sign in
-                  <i class="align-items-end fa-light fa-arrow-right-to-bracket"></i></a></li>
+  <div id="notification-area"></div>
 
-              <a class="d-flex justify-content-between align-items-center dropdown-item" href="signUp.html">Sign up <i
-                  class=" in fa-light fa-user-plus"></i></a>
-          </li>
-          <li>
-            <hr class="dropdown-divider" />
-          </li>
-          <li>
-            <a class="d-flex justify-content-between align-items-center dropdown-item " href="#">account info <i
-                class="fa-light fa-circle-info"></i></a>
-          </li>
-        </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-        </ul>
+  <!-- preloader --------------------------------------------------------------------------------------------------------------->
 
-        <!--col2--------------------------------------------------------------------------->
+  <div id="preloader" style="z-index: 99999999999999999999;"></div>
 
-        <!-- <form class="d-flex justify-content-center align-content-center" role="search">
-          <input class="form-control d-flex" type="search" placeholder="Search" aria-label="Search" />
-          <button class="btn   " type="submit" style="outline: none;">
-            <i class="fa-light fa-magnifying-glass"></i>
-          </button>
-        </form> -->
+  <script src="../js/navLoader.js"></script>
 
-        <a href="profile.html" class="d-flex justify-content-center align-items-center " data-bs-toggle="modal"
-          data-bs-target="#exampleModalInfo" data-backdrop="false">
 
-          <p class="nav-link d-flex justify-content-center align-items-center pe-3 m-0 " id="displayNameHolder">User
-          </p>
-          <div class=""><img style="width: 35px;  height: 35px;  border-radius: 50%" id="photoHolder"
-              src="../pic/profile-placeholder-3.jpg" alt="invalid">
-            <span class="position-absolute  p-2  d-none d-lg-block  rounded-circle badgeM badge "
-              style="top: 27px; right: 40px; ">
-              <span class="visually-hidden">New alerts</span>
-          </div>
-        </a>
+  <!-- audio cadeau----------------------------------------------------------------------------------------------------------- -->
 
-        <div class="modal fade bg-transparent " id="exampleModalInfo" tabindex="-1" aria-labelledby="exampleModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-              <div class="modal-header p-0">
-                <div class="d-flex justify-content-center align-items-center" id="exampleModalLabel">
-                  <img style="  border-radius: 50% ; width: 25px; height: 25px;" id="photoHolder1"
-                    src="../pic/profile-placeholder-3.jpg" alt="invalid" class="ms-3 ">
-                  <h4 class=" p-3  m-0" id="displayNameHolder1">
-                    Not connected</h4>
-                </div>
-                <button type="button" class="btn-close pe-5" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <p>email: <span id="email1" class="text-primary" style="font: size 10px; ">no user connceted</span></p>
-                <p>name: <span id="displayNameHolder2" class="text-primary" style="font: size 10px;">no user
-                    connceted</span></p>
-              </div>
-              <div class="modal-footer">
-                <a href="edit.html" class="btn btn-outline-primary col">modify account</a>
-                <a href="login.html" class="btn btn-outline-danger" id="logOut">logout</a>
-              </div>
-            </div>
-          </div>
-        </div>
+  <audio id="audioGift">
+    <source src="../sound/Fortnite-Noel.mp3" type="audio/mpeg">
+  </audio>
 
+
+  <!-- section 1 + blinking ---------------------------------------------------------------------------------------------->
+
+  <section id="sec1" class=" overflow-hidden  sec1 p-3" style="color: #1B9476; ">
+    <!-- <div class="spacernavbas layernavbas "></div> -->
+
+    <div id="blinking"></div>
+    <div class="stars"></div>
+    <div class="clouds"></div>
+
+
+    <h4 style="z-index: 100;" class="text-center mb-3 hey beige" id="hey">Hey <span id="displayNameHolder3"></span>,
+    </h4>
+    <h1 style="z-index: 100;" class="text-center mb-3 anim1">
+      <span id="cadeau" onclick="document.querySelector('audio').play()">
+        <button onclick=" addSnow() ;" class="bg-transparent border-0">
+          <i class="fa-duotone fa-gift fa-shake" style="color: red;" style="--fa-animation-duration: 3s;"></i>
+        </button>
+      </span>
+      <span id="welcomeCal" class="beige" style="font-family: Montserrat;">
+        Welcome to CALFOOD™</span>
+
+    </h1>
+    <div onclick="document.querySelector('audio').pause()" ondblclick="document.querySelector('audio').play()"
+      id="plateFliping">
+      <div class="d-flex justify-content-center align-items-center mb-3 " style=" user-select: none;"> <i id="plate"
+          class="fa-regular  fa-plate-utensils fa-10x hoverLogoMain beige" style="--fa-animation-duration:10s; z-index: 100;  ;
+          "></i>
       </div>
-  </nav>
-
-  <div class="spacernavbas layernavbas"></div>
-  <!-- // {hovered ? 5s : 2s} -->
-  <section class="bg-white  sec1 p-3" style="color: #1B9476; ">
-    <h1 class="text-center mb-3 anim1">Welcome to CALFOOD™</h1>
-    <div class="d-flex justify-content-center align-items-center mb-3 "> <i
-        class="fa-regular fa-plate-utensils fa-10x fa-flip" 
-        style="--fa-animation-duration:5s; "></i>
     </div>
-    <p class="form-text mb-5 anim2" style="color: #1B9476;">Understand what's in your plate </p>
-    <a href="#secdeux" style="color: #1B9476;"> <i class="fa-regular fa-arrow-down fa-5x fleche "></i></a>
+    <p class="form-text mb-5 anim2 beige" style="color: #1B9476; z-index: 1000;">Understand what's in your plate </p>
+    <a href="#secdeux" style="color: #1B9476; z-index: 100;"> <i id="arrow"
+        class="fa-regular fa-arrow-down fa-5x fleche beige " style="z-index: 100;    
+         "></i></a>
   </section>
 
-  <div class="spacer layerWtoG"></div>
+
+  <!-- second wave white to green ----------------------------------------------------------------------------------------->
+
+  <svg id="Wave2" style="background-color: transparent; width: -webkit-fill-available; "
+    xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:svgjs="http://svgjs.com/svgjs" width="1393" height="200" preserveAspectRatio="none" viewBox="0 0 1393 200">
+    <g mask="url(&quot;#SvgjsMask1135&quot;)" fill="none">
+      <path id="Wave2Top" class="wave2" style="overflow: hidden ; max-width: fit-content; z-index: 100;"
+        d="M 0,4 C 46.6,15.2 139.8,59.4 233,60 C 326.2,60.6 372.8,6.2 466,7 C 559.2,7.8 605.8,62.8 699,64 C 792.2,65.2 838.8,14.8 932,13 C 1025.2,11.2 1072.8,51.6 1165,55 C 1257.2,58.4 1347.4,35 1393,30L1393 200L0 200z"
+        fill="rgba(27, 148, 118, 0.5)"></path>
+      <path class="wave2" style="overflow: hidden ; max-width: fit-content;"
+        d="M 0,127 C 55.8,120 167.4,91.6 279,92 C 390.6,92.4 446.4,130.6 558,129 C 669.6,127.4 725.4,88.6 837,84 C 948.6,79.4 1004.8,108.2 1116,106 C 1227.2,103.8 1337.6,79.6 1393,73L1393 200L0 200z"
+        fill="rgba(27, 148, 118, 0.5)"></path>
+      <path class="wave2" style="overflow: hidden ; max-width: fit-content;"
+        d="M 0,158 C 55.8,165.2 167.4,197.4 279,194 C 390.6,190.6 446.4,143.8 558,141 C 669.6,138.2 725.4,180.2 837,180 C 948.6,179.8 1004.8,140 1116,140 C 1227.2,140 1337.6,172 1393,180L1393 200L0 200z"
+        fill="rgba(27, 148, 118, 0.5)"></path>
+      <!-- <div class="spacer layerWtoG"></div> -->
+
+    </g>
+    <defs>
+      <mask id="SvgjsMask1135">
+        <rect width="1393" height="200" fill="#ffffff"></rect>
+      </mask>
+    </defs>
+  </svg>
+
+  <!-- section 2----------------------------------------------------------------------------------------------------------------- -->
 
   <section id="secdeux" class=" px-3 px-md-5  py-0 d-grid"
-    style="background-color: #1B9476; color: #C7DBC2; height: 500px;">
+    style="background-color: rgb(27,148,118,0.875); color: #C7DBC2; height: 100vh;">
     <div class="row d-flex justify-content-center align-items-center ">
 
-      <div class="col-12 col-md-6 pb-3  reveal fade-left ">
-        <h1 class="text-center text-md-start pb-md-1 pb-3">What is CALFOOD ?</h1>
-        <p>Thanks to multiple technology tools, CALFOOD is able to calculate all the exact food informations about your
+      <div class="col-12 col-md-6 pb-3   ">
+        <h1 class="text-center text-md-start pb-md-1 pb-3 reveal ">What is CALFOOD ?</h1>
+        <p class=" animated-text reveal ">Thanks to multiple technology tools, CALFOOD is able to calculate all the
+          exact food
+          informations about your
           meal and send you all the nutriments you have in your plate
           like the quantity of protein , lipid , glucide and much more. <br> Just by taking a single picture and the
           weight of your plate, CALFOOD already now what's in your plate.</p>
@@ -151,24 +161,57 @@
     </div>
   </section>
 
-  <div class="spacer layerVtoB "></div>
 
-  <section class=" layermontagne spacermontagne reveal p-0" style="background-color: #F4EBD6; color: #124660;">
-    <h1>How to use it ?</h1>
-    <p class="p-5 pt-2 text-center">(dont worry its simple scroll down to understand)</p>
+  <!-- third wave green to white ----------------------------------------------------------------------------------------->
+
+  <svg viewBox="0 0 960 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    <rect id="layerVtoB" x="0" y="0" width="960" height="300" fill="#00941100"></rect>
+    <path id="wave3"
+      d="M0 66L32 61.7C64 57.3 128 48.7 192 52.8C256 57 320 74 384 95C448 116 512 141 576 148.3C640 155.7 704 145.3 768 124.3C832 103.3 896 71.7 928 55.8L960 40L960 0L928 0C896 0 832 0 768 0C704 0 640 0 576 0C512 0 448 0 384 0C320 0 256 0 192 0C128 0 64 0 32 0L0 0Z"
+      fill="rgb(27,148,118,0.875)" stroke-linecap="round" stroke-linejoin="miter"></path>
+    <!-- <div class="spacer layerVtoB "></div> -->
+  </svg>
+
+  <!-- section 3 + svg moontagne----------------------------------------------------------------------------------------------------------------- -->
+
+  <section id="sec3" class="   p-0 ">
+
+    <div id="sunTourne"></div>
+    <h1 style="z-index: 50;">How to use it ?</h1>
+    <p style="z-index: 50;" class="p-5 pt-2 text-center">(dont worry its simple scroll down to understand)</p>
+
+    <svg id="montagneSvg" style="z-index: 10;" class="reveal" id="visual" viewBox="0 0 960 300" width="100%"
+      height="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+      <rect id="layerMontagne" x="0" y="0" width="960" height="300" fill="#00941100"></rect>
+      <path class="montagneShadows" d=" M0 136L120 117L240 141L360 138L480 135L600 103L720 128L840 103L960 142L960
+        301L840 301L720 301L600 301L480 301L360 301L240 301L120 301L0 301Z" fill="#95a4bc"></path>
+      <path class="montagneShadow" d=" M0 140L120 163L240 146L360 173L480 174L600 153L720 119L840 165L960 171L960
+        301L840 301L720 301L600 301L480 301L360 301L240 301L120 301L0 301Z" fill="#7d90a9"></path>
+      <path class="montagneShadow" d=" M0 168L120 181L240 168L360 151L480 170L600 201L720 178L840 166L960 174L960
+        301L840 301L720 301L600 301L480 301L360 301L240 301L120 301L0 301Z" fill="#647d96"></path>
+      <path class="montagneShadow" d=" M0 194L120 193L240 199L360 228L480 218L600 194L720 219L840 227L960 180L960
+        301L840 301L720 301L600 301L480 301L360 301L240 301L120 301L0 301Z" fill="#4c6a84"></path>
+      <path class="montagneShadow" d=" M0 264L120 225L240 225L360 216L480 234L600 246L720 264L840 260L960 234L960
+        301L840 301L720 301L600 301L480 301L360 301L240 301L120 301L0 301Z" fill="#325872"></path>
+      <path class="montagneShadow" d=" M0 291L120 271L240 293L360 277L480 282L600 291L720 265L840 289L960 292L960
+        301L840 301L720 301L600 301L480 301L360 301L240 301L120 301L0 301Z" fill="#124660"></path>
+    </svg>
+
   </section>
 
+  <!-- section 4----------------------------------------------------------------------------------------------------------------- -->
 
-
-  <section class=" px-3 px-md-5  py-0 d-grid" style="background-color: #124660;">
+  <section class=" px-3 px-md-5  py-0 d-grid" style="background-color: #124660; height: 100vh;  ">
     <div class="row " style="color: #f4ebd6;">
-      <div class="col-12 col-md-6 justify-content-center align-items-center reveal fade-left">
+      <div class="col-12 col-md-6 justify-content-center align-items-center reveal ">
         <h1 class="text-center text-md-start pb-md-1 pb-3">Explanation</h1>
-        <p class="reveal pb-3">At first open the application and if you're already not log in sign up it very quick.
+        <p id="explain" class="reveal  pb-3 ">At first open the application and if you're already not log in sign up it
+          very quick.
           After
           that
           go to my meal and click on create a new meal then turn on the CALLFOOD machine and put your plate on the
-          basement . When you are ready click on scan my food and wait for a few seconds. <br> Thats it you just receive
+          basement . When you are ready click on scan my food and wait for a few seconds. <br> Thats it you just
+          receive
           your
           information ! </p>
       </div>
@@ -179,65 +222,105 @@
     </div>
   </section>
 
-  <div class="layerBtoW spacer"></div>
+
+  <!-- svg piloti----------------------------------------------------------------------------------------------------------------- -->
+
+  <svg id="visual" viewBox="0 0 960 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <rect x="0" y="0" width="960" height="300" fill="#ffffff00"></rect>
+    <path
+      d="M0 59L120 59L120 58L240 58L240 210L360 210L360 134L480 134L480 90L600 90L600 109L720 109L720 135L840 135L840 92L960 92L960 186L960 0L960 0L840 0L840 0L720 0L720 0L600 0L600 0L480 0L480 0L360 0L360 0L240 0L240 0L120 0L120 0L0 0Z"
+      fill="#2693ca"></path>
+    <path
+      d="M0 126L120 126L120 138L240 138L240 55L360 55L360 156L480 156L480 71L600 71L600 111L720 111L720 80L840 80L840 177L960 177L960 168L960 0L960 0L840 0L840 0L720 0L720 0L600 0L600 0L480 0L480 0L360 0L360 0L240 0L240 0L120 0L120 0L0 0Z"
+      fill="#248bbf"></path>
+    <path
+      d="M0 94L120 94L120 110L240 110L240 52L360 52L360 65L480 65L480 103L600 103L600 131L720 131L720 96L840 96L840 122L960 122L960 61L960 0L960 0L840 0L840 0L720 0L720 0L600 0L600 0L480 0L480 0L360 0L360 0L240 0L240 0L120 0L120 0L0 0Z"
+      fill="#2183b4"></path>
+    <path
+      d="M0 136L120 136L120 62L240 62L240 77L360 77L360 144L480 144L480 72L600 72L600 81L720 81L720 51L840 51L840 118L960 118L960 111L960 0L960 0L840 0L840 0L720 0L720 0L600 0L600 0L480 0L480 0L360 0L360 0L240 0L240 0L120 0L120 0L0 0Z"
+      fill="#1f7ba9"></path>
+    <path
+      d="M0 132L120 132L120 89L240 89L240 108L360 108L360 101L480 101L480 47L600 47L600 44L720 44L720 82L840 82L840 134L960 134L960 117L960 0L960 0L840 0L840 0L720 0L720 0L600 0L600 0L480 0L480 0L360 0L360 0L240 0L240 0L120 0L120 0L0 0Z"
+      fill="#1d739e"></path>
+    <path
+      d="M0 108L120 108L120 62L240 62L240 98L360 98L360 80L480 80L480 78L600 78L600 67L720 67L720 91L840 91L840 93L960 93L960 66L960 0L960 0L840 0L840 0L720 0L720 0L600 0L600 0L480 0L480 0L360 0L360 0L240 0L240 0L120 0L120 0L0 0Z"
+      fill="#1b6b93"></path>
+    <path
+      d="M0 81L120 81L120 64L240 64L240 83L360 83L360 83L480 83L480 106L600 106L600 81L720 81L720 53L840 53L840 29L960 29L960 35L960 0L960 0L840 0L840 0L720 0L720 0L600 0L600 0L480 0L480 0L360 0L360 0L240 0L240 0L120 0L120 0L0 0Z"
+      fill="#196388"></path>
+    <path
+      d="M0 84L120 84L120 62L240 62L240 69L360 69L360 77L480 77L480 85L600 85L600 68L720 68L720 88L840 88L840 81L960 81L960 81L960 0L960 0L840 0L840 0L720 0L720 0L600 0L600 0L480 0L480 0L360 0L360 0L240 0L240 0L120 0L120 0L0 0Z"
+      fill="#175c7e"></path>
+    <path
+      d="M0 32L120 32L120 63L240 63L240 65L360 65L360 20L480 20L480 53L600 53L600 59L720 59L720 40L840 40L840 61L960 61L960 18L960 0L960 0L840 0L840 0L720 0L720 0L600 0L600 0L480 0L480 0L360 0L360 0L240 0L240 0L120 0L120 0L0 0Z"
+      fill="#155474"></path>
+    <path
+      d="M0 27L120 27L120 28L240 28L240 17L360 17L360 26L480 26L480 49L600 49L600 29L720 29L720 45L840 45L840 24L960 24L960 26L960 0L960 0L840 0L840 0L720 0L720 0L600 0L600 0L480 0L480 0L360 0L360 0L240 0L240 0L120 0L120 0L0 0Z"
+      fill="#144d6a"></path>
+    <path
+      d="M0 28L120 28L120 13L240 13L240 30L360 30L360 30L480 30L480 30L600 30L600 13L720 13L720 19L840 19L840 32L960 32L960 8L960 0L960 0L840 0L840 0L720 0L720 0L600 0L600 0L480 0L480 0L360 0L360 0L240 0L240 0L120 0L120 0L0 0Z"
+      fill="#124660"></path>
+  </svg>
 
 
+  <!-- section 5 lets begin ------------------------------------------------------------------------------------------------->
 
-
-  <section class="bg-white wave3" style="color: #124660;">
-    <h1 class="reveal">Let's begin </h1>
-    <p class="reveal">Sign in to create your first meal !</p>
+  <section id="sec5" class="wave3" style="color: #124660; height: 80vh;">
+    <div id="blinking2" style="display:none;  " class="twinkling"></div>
+    <h1 class="reveal" style="z-index: 1000;">Let's begin </h1>
+    <p class="reveal" style="z-index: 1000;">Sign in to create your first meal !</p>
   </section>
 
 
 
 
-
-
-
-  <!-- Remove the container if you want to extend the Footer to full width. -->
-  <div class=" ">
-
-    <div class="">
-      <!-- Footer -->
-      <footer class="text-center text-white" style="background-color: #1d729c; ">
-        <!-- Grid container -->
-        <div class="container p-4 pb-0">
-          <!-- Section: CTA -->
-          <div class="">
-            <p class="d-flex justify-content-center align-items-center">
-              <span class="me-3">Register for free</span>
-              <a href="../html/signUp.html" class="btn btn-outline-light btn-rounded "> Sign up !</a>
-            </p>
-          </div>
-          <!-- Section: CTA -->
-        </div>
-        <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: #124660; ;">
-          © 2022 Copyright:
-          <a class="text-white" href="https://mdbootstrap.com/">calfood.com</a>
-        </div>
-        <!-- Copyright -->
-      </footer>
-      <!-- Footer -->
+  <!-- Footer ---------------------------------------------------------------------------------------------------------->
+  <footer class="text-center text-white" style="background-color: #1d729c; ">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: CTA -->
+      <div class="">
+        <p class="d-flex justify-content-center align-items-center">
+          <span class="me-3">Register for free</span>
+          <a href="../html/signUp.html" class="btn btn-outline-light btn-rounded "> Sign up !</a>
+        </p>
+      </div>
+      <!-- Section: CTA -->
     </div>
+    <!-- Grid container -->
 
-  </div>
-  <!-- End of .container -->
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: #124660; ;">
+      © 2022 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">calfood.com </a>
+      <p style="font-size:80% ;">(eden jimenez pour le brocolis)</p>
+    </div>
+    <!-- Copyright -->
+  </footer>
 
 
 
+  <!-- script-------------------------------------------------------------------------------------------------------- -->
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <script src="../js/index.js" type="module"></script>
 </body>
 
 
-<script src="./index.js" type="module">
+<script type="module">
 
+  import { handleCheckboxChange } from '../js/index.js';
+  window.handleCheckboxChange = handleCheckboxChange;
 
-import { changeTime } from '../js/index.js';
-    window.changeTime = changeTime;
+  import { addSnow } from '../js/index.js';
+  window.addSnow = addSnow;
+
+  import { changeTime } from '../js/index.js';
+  window.changeTime = changeTime;
+
 </script>
 
 
@@ -251,11 +334,18 @@ import { changeTime } from '../js/index.js';
 
 
 
+<!-- <section class="bg-white">
+
+    
+      <img style="width: 150px;  height: 150px;  border-radius: 50% ;  object-fit: cover; "
+        src="/pic/gettyimages-1229892983-square.jpg" class="img-thumbnail"> 
+        <span class="position-absolute  p-2 bg-danger  rounded-circle devBadge"  style="top: 115px; right:765px; width: 30px; height: 30px;"><i class="fa-duotone fa-brackets-curly text-white" style="bottom: 7px; left: -5px;" ></i></span>
+          <span class="visually-hidden">New alerts</span>
 
 
-<script src="../js/login.js"></script>
-<script src="../js/index.js" type="module"> </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </section> -->
+
+
+
 
 </html>

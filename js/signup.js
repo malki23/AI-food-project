@@ -1,29 +1,29 @@
 var loader1 = document.getElementById("preloadersignup");
 
 function undisplayloader() {
-  if (loader1) loader1.style.display = "none";
+    if (loader1) loader1.style.display = "none";
 }
 
 const wait2Seconds = new Promise((resolve) => {
-  setTimeout(() => {
-    resolve();
-  }, 2000);
+    setTimeout(() => {
+        resolve();
+    }, 0);
 });
 
 const waitForLoad = new Promise((resolve) => {
-  window.addEventListener("load", () => {
-    resolve();
-  });
+    window.addEventListener("load", () => {
+        resolve();
+    });
 });
 
 Promise.all([wait2Seconds, waitForLoad]).then(() => {
-  undisplayloader();
+    undisplayloader();
 });
 
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
-import { getAuth, createUserWithEmailAndPassword,updateProfile, sendEmailVerification} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, updateProfile, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -46,6 +46,16 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app)
 const auth = getAuth();
 
+const numtoday = [
+
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+]
 
 
 
@@ -76,8 +86,8 @@ signUpUserBtn.addEventListener('click', (e) => {
         return;
     }
 
-   
-    
+
+
 
 
 
@@ -88,15 +98,16 @@ signUpUserBtn.addEventListener('click', (e) => {
             // Signed in 
             const user = userCredential.user;
 
-           sendVerificationEmail();
+            sendVerificationEmail();
 
-           updateProfile(user,{
+            updateProfile(user, {
                 displayName: document.getElementById("firstNameSu").value
-           })
+            })
 
-         
+
 
             set(ref(database, 'users/' + user.uid), {
+
 
                 firstName: firstName,
                 email: email,
@@ -104,20 +115,22 @@ signUpUserBtn.addEventListener('click', (e) => {
 
             })
 
+
             notify('success', 'User created !')
             setTimeout(() => {
                 window.location.replace("../html/login.html");
-               }, 1000)
+            }, 1000)
             // ...
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
+            // alert(errorMessage)
             const email2 = document.getElementById('emailSu');
             email2.style.borderBottom = "2px solid red";
 
             notify('info', 'User already exist , try login ')
-           
+
             // ..
         });
 
@@ -127,13 +140,13 @@ signUpUserBtn.addEventListener('click', (e) => {
 
 const sendVerificationEmail = () => {
     sendEmailVerification(auth.currentUser)
-  .then(() => {
-    // Email verification sent!
-    // ...
-  });
+        .then(() => {
+            // Email verification sent!
+            // ...
+        });
 }
 
- function ValidateEmail() {
+function ValidateEmail() {
 
     const email = document.getElementById('emailSu').value;
     const email2 = document.getElementById('emailSu');
@@ -163,37 +176,37 @@ const sendVerificationEmail = () => {
 
 export function ValidateIndicator() {
 
-  const email = document.getElementById('emailSu').value;
-  const email2 = document.getElementById('emailSu');
-  const form=document.getElementById('form1');
+    const email = document.getElementById('emailSu').value;
+    const email2 = document.getElementById('emailSu');
+    const form = document.getElementById('form1');
 
-  var validRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+    var validRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
 
 
 
-  if (email == '') {
-    form.classList.remove('valid')
-     form.classList.remove('invalid')
-     form.classList.remove('invalidText')
-      email2.style.borderBottom = "1px solid #1b9476";
+    if (email == '') {
+        form.classList.remove('valid')
+        form.classList.remove('invalid')
+        form.classList.remove('invalidText')
+        email2.style.borderBottom = "1px solid #1b9476";
 
-  }
+    }
 
-  else if (validRegex.test(email)) {
-    form.classList.remove('invalid')
-    form.classList.add('valid')
-    form.classList.remove('invalidText')
-      email2.style.borderBottom = "1px solid #1b9476";
-      return true;
-  }
-  else {
-    form.classList.remove('valid')
-    form.classList.add('invalid')
-    form.classList.add('invalidText')
-      email2.style.borderBottom = "2px solid red";
-      return false;
+    else if (validRegex.test(email)) {
+        form.classList.remove('invalid')
+        form.classList.add('valid')
+        form.classList.remove('invalidText')
+        email2.style.borderBottom = "1px solid #1b9476";
+        return true;
+    }
+    else {
+        form.classList.remove('valid')
+        form.classList.add('invalid')
+        form.classList.add('invalidText')
+        email2.style.borderBottom = "2px solid red";
+        return false;
 
-  }
+    }
 
 }
 
@@ -223,7 +236,7 @@ function checkInfo() {
         notify("info", "Please enter your last name");
         last2.style.borderBottom = "2px solid red";
     }
-   
+
     else {
 
         return true;
@@ -243,7 +256,7 @@ function checkPassword() {
         password2style.style.borderBottom = "1px solid #1b9476";
     }
 
-    
+
     if (password1 == password2) {
 
         password2style.style.borderBottom = "1px solid #1b9476";
@@ -285,127 +298,127 @@ function checkPassword() {
     }
 }
 
-export function PassNoMatch(){
-  const password1 = document.getElementById('passSu').value;
+export function PassNoMatch() {
+    const password1 = document.getElementById('passSu').value;
     const password2 = document.getElementById('confirmPassSu').value;
     const password1style = document.getElementById('passSu');
     const password2style = document.getElementById('confirmPassSu');
-    const form=document.getElementById('form1');
+    const form = document.getElementById('form1');
 
-    if (password2==''  ) {
-      password2style.style.borderBottom = "1px solid #1b9476";
-       form.classList.remove('PassMatchText')
-    
-     
-  }
+    if (password2 == '') {
+        password2style.style.borderBottom = "1px solid #1b9476";
+        form.classList.remove('PassMatchText')
 
-  
-  // if (password1=='' ) {
-  //   password1style.style.borderBottom = "1px solid #1b9476";
-    
-  //  }
 
-  //  if (password1!='' ) {
-  // password1style.style.borderBottom = "1px solid #1b9476";
-  
+    }
 
-  //  }
 
-   else  if (password1 != password2) {
-      password2style.style.borderBottom = "2px solid red";
-       form.classList.add('PassMatchText')
-     
-     
-  }
+    // if (password1=='' ) {
+    //   password1style.style.borderBottom = "1px solid #1b9476";
 
-  else if (password1 == password2) {
-    password2style.style.borderBottom = "1px solid #1b9476";
-    form.classList.remove('PassMatchText')
-  
-    
-  
+    //  }
+
+    //  if (password1!='' ) {
+    // password1style.style.borderBottom = "1px solid #1b9476";
+
+
+    //  }
+
+    else if (password1 != password2) {
+        password2style.style.borderBottom = "2px solid red";
+        form.classList.add('PassMatchText')
+
+
+    }
+
+    else if (password1 == password2) {
+        password2style.style.borderBottom = "1px solid #1b9476";
+        form.classList.remove('PassMatchText')
+
+
+
+    }
+
+
 }
 
 
-}
 
-
-
-export function NameNotEmpty(){
-  const first = document.getElementById('firstNameSu').value;
+export function NameNotEmpty() {
+    const first = document.getElementById('firstNameSu').value;
     const last = document.getElementById('lastNameSu').value;
     const pass = document.getElementById('passSu').value;
     const firstStyle = document.getElementById('firstNameSu');
     const lastStyle = document.getElementById('lastNameSu');
     const passStyle = document.getElementById('passSu');
-    const form=document.getElementById('form1');
+    const form = document.getElementById('form1');
 
-    if (first=='' || first!='' ) {
+    if (first == '' || first != '') {
 
-      firstStyle.style.borderBottom = "1px solid #1b9476";
-  }
+        firstStyle.style.borderBottom = "1px solid #1b9476";
+    }
 
-     if (last=='' | last!='') {
-      lastStyle.style.borderBottom = "1px solid #1b9476";
+    if (last == '' | last != '') {
+        lastStyle.style.borderBottom = "1px solid #1b9476";
 
-  }
+    }
 
-  if (pass=='' | pass!='') {
-    passStyle.style.borderBottom = "1px solid #1b9476";
+    if (pass == '' | pass != '') {
+        passStyle.style.borderBottom = "1px solid #1b9476";
 
-}
+    }
 
 }
 
 
 export function checkPasswordValueText() {
 
- const password1 = document.getElementById('passSu').value;
-  const password1style = document.getElementById('passSu');
-  const password2 = document.getElementById('confirmPassSu').value;
-  const password2style = document.getElementById('confirmPassSu');
-  const form=document.getElementById('form1');
+    const password1 = document.getElementById('passSu').value;
+    const password1style = document.getElementById('passSu');
+    const password2 = document.getElementById('confirmPassSu').value;
+    const password2style = document.getElementById('confirmPassSu');
+    const form = document.getElementById('form1');
 
 
-  
-
-//   if (password1=='' && password2=='') {
-//     password2style.style.borderBottom = "1px solid #1b9476";
-//     password1style.style.borderBottom = "1px solid #1b9476";
-//      form.classList.remove('PassMatchText')
-  
-//    return;
-// }
-
-if (password1=='' ) {
- 
-  form.classList.remove('passLower')
-  form.classList.remove('passUpper')
-  form.classList.remove('passNum')
-  form.classList.remove('pass8')
-   password1style.style.borderBottom = "1px solid #1b9476";
 
 
- return;
-}
+    //   if (password1=='' && password2=='') {
+    //     password2style.style.borderBottom = "1px solid #1b9476";
+    //     password1style.style.borderBottom = "1px solid #1b9476";
+    //      form.classList.remove('PassMatchText')
 
-if (password1!= password2 && password2!='') {
- 
-  
-  password2style.style.borderBottom = "2px solid red";
-  form.classList.add('PassMatchText')
+    //    return;
+    // }
 
- 
-}
+    if (password1 == '') {
 
-if (password1== password2 && password2!='') {
- 
-  
-  password2style.style.borderBottom = "1px solid #1b9476";
-  form.classList.remove('PassMatchText')
+        form.classList.remove('passLower')
+        form.classList.remove('passUpper')
+        form.classList.remove('passNum')
+        form.classList.remove('pass8')
+        password1style.style.borderBottom = "1px solid #1b9476";
 
- 
-}
+
+        return;
+    }
+
+    if (password1 != password2 && password2 != '') {
+
+
+        password2style.style.borderBottom = "2px solid red";
+        form.classList.add('PassMatchText')
+
+
+    }
+
+    if (password1 == password2 && password2 != '') {
+
+
+        password2style.style.borderBottom = "1px solid #1b9476";
+        form.classList.remove('PassMatchText')
+
+
+    }
 
 
 
@@ -413,18 +426,18 @@ if (password1== password2 && password2!='') {
 
     if (password1.length < 8) {
 
-       
+
         password1style.style.borderBottom = "2px solid red ";
-         form.classList.remove('passLower')
-         form.classList.remove('passUpper')
-         form.classList.remove('passNum')
-         form.classList.add('pass8')
+        form.classList.remove('passLower')
+        form.classList.remove('passUpper')
+        form.classList.remove('passNum')
+        form.classList.add('pass8')
 
 
 
     } else if (password1.search(/[a-z]/) < 0) {
 
-      
+
         password1style.style.borderBottom = "2px solid red ";
         form.classList.remove('passNum')
         form.classList.remove('passUpper')
@@ -434,7 +447,7 @@ if (password1== password2 && password2!='') {
 
     } else if (password1.search(/[A-Z]/) < 0) {
 
-      
+
         password1style.style.borderBottom = "2px solid red ";
         form.classList.remove('passNum')
         form.classList.remove('pass8')
@@ -444,7 +457,7 @@ if (password1== password2 && password2!='') {
 
     } else if (password1.search(/[0-9]/) < 0) {
 
-       
+
         password1style.style.borderBottom = "2px solid red ";
         form.classList.remove('passUpper')
         form.classList.remove('pass8')
@@ -454,26 +467,26 @@ if (password1== password2 && password2!='') {
 
     }
     else {
-      form.classList.remove('passLower')
-      form.classList.remove('passUpper')
-      form.classList.remove('passNum')
-      form.classList.remove('pass8')
-       password1style.style.borderBottom = "1px solid #1b9476";
+        form.classList.remove('passLower')
+        form.classList.remove('passUpper')
+        form.classList.remove('passNum')
+        form.classList.remove('pass8')
+        password1style.style.borderBottom = "1px solid #1b9476";
         return true;
     }
 }
 
 function checkPasswordValue(password) {
 
-  const password1style = document.getElementById('passSu');
-  const password2style = document.getElementById('confirmPassSu');
+    const password1style = document.getElementById('passSu');
+    const password2style = document.getElementById('confirmPassSu');
 
     if (password.length < 8) {
 
         notify('error', ' Password must be at least 8 characters');
         password1style.style.borderBottom = "2px solid red ";
         password2style.style.borderBottom = "2px solid red ";
-         
+
 
 
 
@@ -482,7 +495,7 @@ function checkPasswordValue(password) {
         notify('error', ' Password must contain at least one lowercase letter');
         password1style.style.borderBottom = "2px solid red ";
         password2style.style.borderBottom = "2px solid red ";
-       
+
 
 
     } else if (password.search(/[A-Z]/) < 0) {
@@ -490,7 +503,7 @@ function checkPasswordValue(password) {
         notify('error', ' Password must contain at least one uppercase letter');
         password1style.style.borderBottom = "2px solid red ";
         password2style.style.borderBottom = "2px solid red ";
-       
+
 
 
     } else if (password.search(/[0-9]/) < 0) {
@@ -498,7 +511,7 @@ function checkPasswordValue(password) {
         notify('error', ' Password must contain at least one number');
         password1style.style.borderBottom = "2px solid red ";
         password2style.style.borderBottom = "2px solid red ";
-       
+
 
     }
     else {
@@ -551,7 +564,24 @@ function notify(type, message) {
         n.classList.add("notification", type);
         n.innerText = message;
         document.getElementById("notification-area").appendChild(n);
+
+        if (type === "error") {
+            var audio = new Audio('/sound/error.mp3');
+            audio.play();
+        }
+        else if (type === "info") {
+            var audio = new Audio("/sound/warning.mp3");
+            audio.play();
+            console.log('warning')
+        }
+        else if (type === "success") {
+            var audio = new Audio('/sound/success.mp3');
+            audio.play();
+        }
+
         setTimeout(() => {
+
+
             var notifications = document.getElementById("notification-area").getElementsByClassName("notification");
             for (let i = 0; i < notifications.length; i++) {
                 if (notifications[i].getAttribute("id") == id) {
@@ -559,7 +589,16 @@ function notify(type, message) {
                     break;
                 }
             }
-        }, 5000);
+        }, 0);
+
+
+
+
+
+
     })();
 }
 
+export function displayQuote() {
+    document.getElementById("enveloppe").value = "email";
+}

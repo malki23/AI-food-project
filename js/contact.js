@@ -7,7 +7,7 @@ function undisplayloader() {
 const wait2Seconds = new Promise((resolve) => {
   setTimeout(() => {
     resolve();
-  }, 2000);
+  }, 0);
 });
 
 const waitForLoad = new Promise((resolve) => {

@@ -1,0 +1,318 @@
+.color-pattern {
+    color: #124660;
+    color: #1b9476;
+    color: #8bd59e;
+    color: #c7dbc2;
+    color: #f4ebd6;
+     
+  }
+
+body{
+
+  background-image: url(../pic/4d-ultra-hd-caged-ball-8gnb5l8ecpjlsg5j.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size:cover;  
+  background-attachment: fixed;
+  background-color: white;
+   
+   
+
+}
+
+
+.form-control  {
+  border-radius: 0%;
+  outline:solid  1px green;
+  border: solid green 1px;
+  overflow: visible;
+  background: transparent;
+  box-shadow: none;
+}
+
+.wrap {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    justify-content: center;
+    
+  }
+
+  #AiInfo{
+
+   }
+  
+  .buttonScan {
+    min-width: 300px;
+    min-height: 60px;
+     font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #000000;
+    /* background: #8bd59e; */
+    background: linear-gradient(90deg, #b3f6a2 0%, #52dd75 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+    justify-content: center;
+    }
+  
+  /* button::before {
+  content: '';
+    border-radius: 1000px;
+    min-width: calc(300px + 12px);
+    min-height: calc(60px + 12px);
+    border: 6px solid #92fca489;
+    box-shadow: 0 0 60px #55f46d5c;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+  }
+   */
+  .buttonScan:hover, .button:focus {
+    color: #008d10;
+    transform: translateY(-6px);
+  }
+  
+  button:hover::before, button:focus::before {
+    opacity: 1;
+  }
+  
+  .buttonScan::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    border: 6px solid #6ff087;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+  }
+  
+  button:hover::after, button:focus::after {
+    animation: none;
+    display: none;
+  }
+ 
+
+  .lastFood{
+
+    animation: lastFoodGlow 2.5s  ease-in infinite;
+  }
+
+
+  
+#layerLast{
+   filter: drop-shadow(0px 25px 10px   #00486c7d);
+ }
+
+#waveList{
+  filter: drop-shadow(0px 15px 10px  #08392d7c);
+}
+.greenDark{
+
+  background-color:    #1b9476;
+  color: #6ff087;
+  
+}
+
+.greenLight{
+
+  background-color:  #8bd59e;
+
+}
+  
+  
+  @keyframes ring {
+    0% {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      width: 300px;
+      height: 300px;
+      opacity: 0;
+    }
+  }
+
+
+  @keyframes lastFoodGlow {
+    0% {
+     background-color: #124660;
+     color: aliceblue;
+
+    }
+   50% {
+     
+    background-color: #0079b5;
+    color: #ffffff;
+  }
+    100%{
+      color: aliceblue;
+      background-color:  #124660;
+
+    }
+  }
+
+  @keyframes lastFoodGlowWave {
+    0% {
+     fill: #124660;
+      
+
+    }
+   50% {
+     
+    fill: #0079b5;
+     
+  }
+    100%{
+      
+      fill:  #124660;
+
+    }
+  }
+
+ 
+   
+
+ 
+
+ 
+canvas{
+  
+  border-bottom-right-radius: 30px;
+  height: 100%;
+  width: 100%;
+}
+
+#row{
+ 
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 5px 15px 50px -16px #000000
+          ;
+}
+
+@media (min-width: 992px) {
+  canvas {
+    border-top-right-radius: 30px;
+  }
+  
+}
+
+@media (max-width: 992px) {
+  canvas {
+    border-bottom-left-radius: 30px;
+  }
+  #row{
+    border-bottom-left-radius: 30px;
+
+    border-top-left-radius: 30px;
+  }
+  
+}
+#notification-area .notification {
+  position: relative;
+  padding: 15px 10px;
+  min-width: 500px;
+
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  margin: 5px 0px;
+  opacity: 0;
+  left: 20px;
+
+  position: absolute;
+  right: 0;
+  top: 26px;
+
+  animation: showNotification 500ms ease-in-out forwards;
+}
+
+
+
+.layerLast {
+  
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.layerLast svg {
+  position: relative;
+  display: block;
+  width: calc(140% + 1.3px);
+  height: 73px;
+}
+
+
+ 
+
+
+
+
+.custom-shape-divider-bottom-1678876083 {
+  
+  width: 100%;
+   
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+ 
+}
+
+.custom-shape-divider-bottom-1678876083 svg {
+  position: relative;
+  display: block;
+  width: calc(127% + 1.3px);
+  height: 73px;
+  
+}
+
+.custom-shape-divider-bottom-1678876083 .shape-fill {
+  fill: #1b9476;
+   
+}
+
+
+   .nav-link {
+
+      background-image: linear-gradient(to right, #f3f0f0,#ffffff,#ffffff );
+    }
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+

@@ -1,0 +1,227 @@
+<nav id="nav" class="navbar navbar-expand-lg bg-gradient pe-3"
+    style="background-color: rgb(27,148,118,0.4); ; padding: 4px; font-size: small; z-index: 100;">
+    <div class="container-fluid">
+        <a id="calfoodHome" class="navbar-brand" href="index.html">CALFOOD <i class="fa-light fa-plate-utensils fa-flip"
+                style="--fa-animation-duration: 5s;"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--row -------------------------------------------------------------------------------->
+
+            <!--col1--------------------------------------------------------------------------->
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link me-4" href="myMeal.html">My meals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link me-4" href="contact.html">Contact us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link me-4" href="Mealist.html">Meal list</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link me-4" href="nutrition.html">Nutrition</a>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle me-4" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Account
+                    </a>
+                    <ul class="dropdown-menu w-25 " style="background-color: rgb(253, 251, 251,0.6);">
+                        <li><a class="d-flex justify-content-between align-items-center dropdown-item"
+                                href="login.html">Sign in
+                                <i class="align-items-end fa-light fa-arrow-right-to-bracket"></i></a></li>
+
+                        <a class="d-flex justify-content-between align-items-center dropdown-item"
+                            href="signUp.html">Sign up <i class=" in fa-light fa-user-plus"></i></a>
+
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+                        <li>
+                            <a class="d-flex justify-content-between align-items-center dropdown-item " href="#">account
+                                info <i class="fa-light fa-circle-info"></i></a>
+                        </li>
+
+
+                    </ul>
+                </li>
+                <li class="d-flex align-items-center justify-content-center  "> <input type="checkbox" id="checkBox"
+                        onchange=" handleCheckboxChange()">
+                    <label id="labelDark" for="checkBox"> </label>
+                </li>
+                </li>
+
+            </ul>
+
+
+
+            <!--col2--------------------------------------------------------------------------->
+
+            <!-- <form class="d-flex justify-content-center align-content-center" role="search">
+          <input class="form-control d-flex" type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn   " type="submit" style="outline: none;">
+            <i class="fa-light fa-magnifying-glass"></i>
+          </button>
+         </form> -->
+
+
+            <div class="dropdown " id="navbarSupportedContent1">
+                <a class=" dropdown  d-flex justify-content-lg-center justify-content-start align-items-center" href="#"
+                    role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="d-flex justify-content-center align-items-center " id="navBar">
+
+                        <div class="loginIfNotUser"></div>
+                        <div><img style="width: 50px;  height: 50px;  border-radius: 50% ;  object-fit: cover"
+                                id="photoHolder" src="../pic/profile-placeholder-3.jpg" alt="invalid" class="">
+                            <span id="badge"
+                                class="position-absolute  p-2  d-none d-lg-block  rounded-circle badgeM badge "
+                                style="top: 37px; right: 37px; z-index: 100;">
+                                <span class="visually-hidden">New alerts</span>
+                        </div>
+                    </div>
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end pb-0 " id="dropInfo"
+                    style="background-color: rgba(255, 255, 255, 0.95);" aria-labelledby="dropdownMenuLink">
+                    <div class="d-flex justify-content-start align-items-center ps-3">
+                        <img style="  border-radius: 50% ; width: 70px; height: 70px; object-fit: cover "
+                            id="photoHolder1" src="../pic/profile-placeholder-3.jpg" alt="invalid"
+                            class="d-flex justify-content-center align-items-center m-3 my-1">
+                        <p class=" p-1  m-0 d-flex justify-content-center align-items-center bold"
+                            style="font-size: 20px; font-weight: 700" id="displayNameHolder1">
+                            Not connected</p>
+                    </div>
+                    <hr class="dropdown-divider">
+                    <li><a class="dropdown-item" href="#">
+                            <p><span id="enveloppe" onMouseover="displayQuote();" class="hovertext"
+                                    data-hover="user email"><i
+                                        class="fa-light fa-envelope pe-2  fa-beat-fade hoverLogoInfo"
+                                        style="--fa-beat-fade-opacity: 0.5; --fa-beat-fade-scale: 1.1; --fa-animation-duration: 3s;"></i></span>
+                                <span id="email1" style="font: size 10px; color: #0084ff;">user not conneceted</span>
+                            </p>
+
+                        </a></li>
+                    <li><a class="dropdown-item" href="#">
+                            <p><span class="hovertext" data-hover="username"><i
+                                        class="fa-light fa-user pe-3 fa-beat-fade hoverLogoInfo"
+                                        style="--fa-beat-fade-opacity: 0.5; --fa-beat-fade-scale: 1.1; --fa-animation-duration: 3s;"></i></span><span
+                                    id="displayNameHolder2" style="font: size 10px; color: #0084ff;">user not
+                                    conneceted</span></p>
+                        </a></li>
+                    <li><a class="dropdown-item" href="#">
+                            <p><span class="hovertext" data-hover="last login"><i
+                                        class="fa-light fa-clock fa-beat-fade pe-2 hoverLogoInfo"
+                                        style="--fa-beat-fade-opacity: 0.5; --fa-beat-fade-scale: 1.1; --fa-animation-duration: 3s;"></i></span><span
+                                    id="lastLogin" style="font: size 10px; color: #0084ff;"> user not
+                                    conneceted</span></p>
+                        </a></li>
+                    <li class="p-0 ">
+                        <hr class="dropdown-divider m-0">
+                    </li>
+                    <li class="px-0 "> <a class="btn btn-outline-primary border-0 w-100 p-2" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" style="border-radius: 0; " id="modify"><i
+                                class="fa-light fa-user-pen pe-1 "></i>modify account </a>
+                    </li>
+
+
+
+                    <li>
+                        <hr class="dropdown-divider m-0">
+                    </li>
+                    <li class=" p-0"> <a href="login.html " class="btn btn-outline-danger border-0 w-100 "
+                            id="logOut"><i class="fa-light fa-arrow-up-left-from-circle pe-1"></i>logout</a>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+</nav>
+
+<div class="modal fade p-2  " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    style="z-index: 10000; opacity: 1; backdrop-filter: blur(8px);">
+    <div class="modal-dialog" style="left: 0px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="text-center">Profile </h1>
+                <div class="d-flex justify-content-center align-items-center px-4 ">
+                    <img id="photoHolder6" src="../pic/istockphoto-1300845620-612x612.jpg" width="70px" height="70px"
+                        style=" border-radius: 50%; object-fit: cover;
+             
+            " class="m-0 mb-1 d-flex justify-content-center align-items-center ">
+
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="col form-floating mb-3 d-flex justify-content-center align-items-center">
+                    <input type="password" class="form-control text-primary" id="newPass" placeholder="." required
+                        style="padding-left: 21px;">
+                    <label for="newPass"><i class="fa-light fa-lock "></i> Password</label>
+                </div>
+
+
+                <!--  DISPLAT NAME -->
+                <div class="col form-floating mb-3">
+                    <input type="text" class="form-control text-primary" id="newName" placeholder="." required
+                        style="padding-left: 21px;">
+                    <label for="newName"><i class="fa-light fa-user"></i> Display name</label>
+                </div>
+
+
+                <!-- PICTURE EMPLACEMENT -->
+                <!-- <div class="col form-floating mb-4">
+          <input type="url" class="form-control text-primary" id="newPic" placeholder="." required
+            style="padding-left: 21px;">
+          <label for="newPic"><i class="fa-light fa-image"></i> Url of picture</label>
+        </div> -->
+
+
+                <div class="col form-floating mb-4">
+                    <input type="file" class="form-control text-primary" id="newPic" placeholder="." required
+                        style="padding-left: 21px;">
+
+                </div>
+            </div>
+            <div class="modal-footer row gx-0 pb-0">
+
+
+
+
+                <div class="row gx-0  d-flex justify-content-center align-items-center">
+                    <div class="col w-100 d-flex justify-content-center align-items-center m-0 me-1">
+                        <button id="edit" class="btn btn-outline-primary w-100" data-bs-dismiss="modal">Edit</button>
+                    </div>
+                    <div class="col w-100 d-flex justify-content-center align-items-center m-0 ms-1">
+                        <button id="back" class="btn btn-outline-secondary w-100" data-bs-dismiss="modal">close</button>
+                    </div>
+                </div>
+                <div class="row gx-0 pb-2 d-flex justify-content-center align-items-center">
+                    <div class="col-12 w-100 d-flex justify-content-center align-items-center m-0 p-0">
+                        <button id="delete" class="btn btn-outline-danger w-100 ">Delete Account</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="topDivider" class="topDivider  " style="background-color: transparent;">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path id="TopDFill"
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"></path>
+    </svg>
+</div>

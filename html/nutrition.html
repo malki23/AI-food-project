@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v6.2.0/css/pro.min.css">
+    <!-- <link rel="stylesheet" href="../css/index.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" style="border: radius 50px" id="photoHolder2">
+</head>
+<style>
+    .area {
+        width: 100vw;
+        overflow-x: hidden;
+        z-index: -1000;
+
+    }
+
+    .circles {
+        width: 100vw;
+        overflow-x: hidden;
+        z-index: -1000;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .circles li {
+
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        background: rgba(157, 255, 226, 0.6);
+        animation: animate 25s linear infinite;
+
+    }
+
+    .circles li:nth-child(1) {
+        left: 25%;
+        width: 80px;
+        height: 80px;
+        animation-delay: 0s;
+    }
+
+
+    .circles li:nth-child(2) {
+        left: 10%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 2s;
+        animation-duration: 12s;
+    }
+
+    .circles li:nth-child(3) {
+        left: 70%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 4s;
+    }
+
+    .circles li:nth-child(4) {
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        animation-delay: 0s;
+        animation-duration: 18s;
+    }
+
+    .circles li:nth-child(5) {
+        left: 65%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 0s;
+    }
+
+    .circles li:nth-child(6) {
+        left: 75%;
+        width: 110px;
+        height: 110px;
+        animation-delay: 3s;
+    }
+
+    .circles li:nth-child(7) {
+        left: 35%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 7s;
+    }
+
+    .circles li:nth-child(8) {
+        left: 50%;
+        width: 25px;
+        height: 25px;
+        animation-delay: 15s;
+        animation-duration: 45s;
+    }
+
+    .circles li:nth-child(9) {
+        left: 20%;
+        width: 15px;
+        height: 15px;
+        animation-delay: 2s;
+        animation-duration: 35s;
+    }
+
+    .circles li:nth-child(10) {
+        left: 85%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 0s;
+        animation-duration: 11s;
+    }
+
+
+
+    @keyframes animate {
+
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+            border-radius: 0;
+        }
+
+        100% {
+            transform: translateY(-1000px) rotate(720deg);
+            opacity: 0;
+            border-radius: 50%;
+        }
+
+    }
+
+    .progress-bar {
+        width: 80%;
+        height: 20px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .progress {
+        width: 0%;
+        max-width: 80vw;
+        height: 100%;
+        background-color: #4caf50;
+        background-image: linear-gradient(to right, #00ca5b 15vw, #f09000 50vw, #ff0000 60vw, #5a0101);
+
+        transition: width 0.8s ease-in;
+    }
+
+    #displayInfo {
+
+        font-size: larger;
+    }
+
+    #daily {
+        font-size: larger;
+    }
+
+    .form-control {
+        border-radius: 0%;
+        outline: solid 1px rgb(134, 134, 134);
+        border: solid rgb(164, 164, 164) 1px;
+        overflow: visible;
+        background: transparent;
+        box-shadow: none;
+    }
+
+
+
+    .input-group-text {
+        background-color: rgba(157, 255, 226, 0.6);
+    }
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+        height: 100vh;
+    }
+
+    input {
+        z-index: 1;
+    }
+</style>
+
+
+<body>
+
+    <div class="area " id="cube">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script src="../js/navLoader.js"></script>
+
+
+
+
+    <div class="row">
+        <div class="col-8">
+            <div class="input-group p-2  mb-3 m-5 d-flex justify-content-center align-items-center w-100">
+                <span class="input-group-text" id="inputGroup-sizing-first" style="width: 150px;">size (cm)</span>
+                <input id="size" type="number" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-first">
+            </div>
+
+            <div class="input-group p-2 mb-3 m-5 w-100">
+                <span class="input-group-text " id=" inputGroup-sizing-second" style="width: 150px;">weight (kg)</span>
+                <input id="weight" type="number" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-second">
+            </div>
+
+            <div class="input-group p-2 mb-3 m-5 w-100">
+                <span class="input-group-text p-2" id="inputGroup-sizing-third" style="width: 150px;">age </span>
+                <input id="age" type="number" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-third">
+            </div>
+
+
+            <div class="input-group p-2 mb-3 m-5 w-100">
+                <label class="input-group-text" for="inputGroupSelect01" style="width: 150px;">gender</label>
+                <select id="gender" class="form-select" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="1">men</option>
+                    <option value="2">women</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="ms-5 d-flex align-items-center justify-content-center" style="height: 100%;">
+                <div class="text-center pe-2" id="displayInfo"> calories needs
+                </div>
+                <div id="daily"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <button id="btnCalcul" style=" z-index: 1000;  background-color: rgba(157, 255, 226, 0.6);" type="button"
+        class="btn p-2 m-5 mb-0">calculate</button>
+
+
+
+    <h1 class="text-center" id="percent">0%</h1>
+    <h4 class="text-center" id="infosElement"></h4>
+    <div class="d-flex align-items-center justify-content-center">
+        <div class="progress-bar m-5 ">
+            <div class="progress" id="progress"></div>
+        </div>
+    </div>
+
+
+</body>
+
+<script src="../js/index.js " type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+
+<script type="module">
+
+    const btnCalcul = document.getElementById("btnCalcul")
+
+    const displayInfo = document.getElementById("displayInfo")
+
+
+
+    let calPerDay = 0;
+
+
+    btnCalcul.addEventListener('click', () => {
+
+
+        const size = document.getElementById("size").value
+        const weight = document.getElementById("weight").value
+        const gender = document.getElementById("gender")
+        const age = document.getElementById("age").value
+        const daily = document.getElementById("daily")
+        daily.innerHTML = "  daily calories";
+
+
+
+        displayInfo.style.color = "rgba(90, 255, 206, 1)"
+
+
+
+        var text = gender.options[gender.selectedIndex].text;
+        console.log(text)
+        let empty = ""
+
+        if (size == "" || weight == "" || age == "") {
+            console.log("null")
+            empty = "empty"
+        }
+
+
+        else if (text == "women") {
+
+            calPerDay = 655.1 + (4.35 * weight) + (4.7 * size) - (4.7 * age)
+
+            console.log("women")
+
+            displayInfo.innerHTML = calPerDay.toFixed(2);
+
+        }
+
+        else {
+
+            calPerDay = (66 + (6.2 * weight) + (12.7 * size) - (6.76 * age));
+            console.log("men")
+
+            displayInfo.innerHTML = calPerDay.toFixed(2);
+
+
+            console.log(calPerDay)
+
+        }
+        showdate(empty);
+
+    })
+
+
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+    import { getStorage, ref, getDownloadURL, uploadBytes } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-storage.js";
+    import { getDatabase, set, ref as refD, update, get, child } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+    import { getAuth, updateProfile, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyAs8wqzfMoB1fx1cbwKDUJ5HH9pZmGeaSM",
+        authDomain: "iot-project-of-malki.firebaseapp.com",
+        databaseURL: "https://iot-project-of-malki-default-rtdb.firebaseio.com",
+        projectId: "iot-project-of-malki",
+        storageBucket: "iot-project-of-malki.appspot.com",
+        messagingSenderId: "1042946587373",
+        appId: "1:1042946587373:web:600231fca71a206df16ae4",
+        measurementId: "G-4B1MKYBMK4"
+    };
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app)
+    const auth = getAuth(app);
+    //const user = auth.currentUser;
+
+    const Btn = document.getElementById("btnTakePic");
+    const canvas = document.getElementById("canvas");
+    const colors = ['blue', 'red', 'green', 'purple', 'cyan']; const storage = getStorage(app);
+    function showdate(empty) {
+
+        auth.onAuthStateChanged(user => {
+
+            const userId = user?.uid;
+            const dbRef = refD(getDatabase());
+            get(child(dbRef, `users/${userId}/bigArray`)).then((snapshot) => {
+
+                //let bigArray = snapshot.val() || [];
+                let bigArray = !snapshot.val() ? [] : snapshot.val();
+                // If bigArray is not an array, initialize it to an empty array
+
+                var currentDate = new Date();
+                var currentDay = currentDate.getDate();
+                var currentMonth = currentDate.getMonth() + 1;
+                console.log(currentDay + " / " + currentMonth)
+                var selectedDates = [];
+                let counterCalories = 0;
+
+                for (var i = 0; i < bigArray.length; i++) {
+                    var dateValue = bigArray[i][1].mealDate;
+                    var dateParts = dateValue.split(' ')[2].split('/');
+
+                    var elementDay = parseInt(dateParts[0]);
+                    var elementMonth = parseInt(dateParts[1]);
+
+
+
+                    if (elementDay == currentDay && elementMonth === currentMonth) {
+
+                        if (bigArray[i][0].gram === " Per weight") {
+                            for (let j = 2; j < bigArray[i].length; j++) {
+
+
+                                var foodName = Object.keys(bigArray[i][j])[0]; // Get the food name (e.g., 'water', 'burger')
+                                var calories = bigArray[i][j][foodName].calories;
+
+                                counterCalories += parseInt(calories);
+
+                                console.log(counterCalories)
+
+                                // counterCalories += bigArray[i][j][0].calories
+
+                            }
+
+                        }
+                    }
+                }
+
+                var maxValue = 0
+                var percentage = 0
+                var currentValue = 0
+
+                if (empty !== "empty") {
+                    console.log("not empty")
+                    maxValue = calPerDay;
+                    currentValue = counterCalories;
+                    percentage = (currentValue / maxValue) * 100;
+                }
+
+                var progressElement = document.getElementById('percent');
+                var progress = document.getElementById('progress');
+
+                if (percentage > 0 && percentage <= 20) {
+                    infosElement.innerHTML = "You're off to a great start! Keep going!";
+                }
+                else if (percentage > 20 && percentage <= 40) {
+                    infosElement.innerHTML = "You can do better !";
+
+                }
+                else if (percentage > 40 && percentage <= 60) {
+                    infosElement.innerHTML = "Halfway there, congrats! You deserve a cookie...or a carrot stick, your call.";
+
+                }
+                else if (percentage > 60 && percentage <= 80) {
+                    infosElement.innerHTML = "Getting closer to your goal with every bite!";
+
+                }
+                else if (percentage > 80 && percentage <= 90) {
+                    infosElement.innerHTML = "`Almost there ! Keep munching like a boss! ";
+
+                }
+                else if (percentage > 90 && percentage <= 100) {
+                    infosElement.innerHTML = "Congratulations, you food ninja! You're slicing through those goals with precision and deliciousness! !";
+
+                }
+                else if (percentage > 100) {
+                    infosElement.innerHTML = "start diet.. ";
+
+                }
+
+
+                progressElement.innerHTML = percentage.toFixed(2) + '%';
+                progress.style.width = percentage + '%'
+
+
+
+            }).catch((error) => {
+                console.error(error);
+            });
+        })
+
+
+    }
+
+
+
+</script>
+<script src="../js/index.js"></script>
+
+</html>

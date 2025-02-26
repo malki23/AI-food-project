@@ -1,23 +1,23 @@
 var loader1 = document.getElementById("preloaderlogin");
 
 function undisplayloader() {
-  loader1.style.display = "none";
+    loader1.style.display = "none";
 }
 
 const wait2Seconds = new Promise((resolve) => {
-  setTimeout(() => {
-    resolve();
-  }, 2000);
+    setTimeout(() => {
+        resolve();
+    }, 0);
 });
 
 const waitForLoad = new Promise((resolve) => {
-  window.addEventListener("load", () => {
-    resolve();
-  });
+    window.addEventListener("load", () => {
+        resolve();
+    });
 });
 
 Promise.all([wait2Seconds, waitForLoad]).then(() => {
-  undisplayloader();
+    undisplayloader();
 });
 
 const togglePassword = document.querySelector("#lock");
@@ -34,9 +34,9 @@ togglePassword.addEventListener("click", function () {
 });
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+import { getDatabase, set, ref, update, child, get } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
 // import { getStorage, ref, uploadBytes } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-storage.js";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut ,GoogleAuthProvider ,signInWithRedirect,getRedirectResult,signInWithPopup,sendEmailVerification} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signInWithPopup, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -59,6 +59,7 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app)
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
+
 const numtoday = [
 
     "Sunday",
@@ -69,6 +70,10 @@ const numtoday = [
     "Friday",
     "Saturday"
 ]
+
+
+
+
 
 
 
@@ -90,20 +95,37 @@ BtnSignIn.addEventListener('click', (e) => {
             const user = userCredential.user;
             const dt = new Date();
             const minutzformatted = dt.getMinutes() < 10 ? "0" + dt.getMinutes().toString() : dt.getMinutes().toString()
-            const dateData = dt.getDate().toString() + "/" + (dt.getMonth()+1).toString() + " - " + dt.getHours().toString() + ":" + minutzformatted +  " , " +  numtoday[dt.getDay()]
-          
-
-            update(ref(database, 'users/' + user.uid), {
-
-                last_login: dateData,
+            const dateData = numtoday[dt.getDay()] + " the " + dt.getDate().toString() + "/" + (dt.getMonth() + 1).toString() + " at " + dt.getHours().toString() + ":" + minutzformatted
 
 
-            })
+            const userId = user.uid;
+            const dbRef = ref(getDatabase());
+            get(child(dbRef, `users/${userId}`)).then((snapshot) => {
+                if (snapshot.exists()) {
+
+
+
+                    update(ref(database, 'users/' + user.uid), {
+
+                        last_login: snapshot.val()?.current_login ? snapshot.val()?.current_login : dateData + " first login",
+                        current_login: dateData
+
+                    })
+
+                }
+                else {
+                    console.log("No data available");
+                }
+            }).catch((error) => {
+                console.error(error);
+            });
+
+
 
             notify("success", "user loged in");
             setTimeout(() => {
-              window.location.replace("../html/index.html");
-             }, 1000)
+                window.location.replace("../html/index.html");
+            }, 1000)
             // ...
         })
         .catch((error) => {
@@ -114,7 +136,7 @@ BtnSignIn.addEventListener('click', (e) => {
             email2.style.borderBottom = "2px solid red";
             pass2.style.borderBottom = "2px solid red";
 
-            notify("error", "wrong user or password ");
+            notify("error", authErrorToTitleCase(errorCode));
         });
 
 });
@@ -134,7 +156,7 @@ onAuthStateChanged(auth, (user) => {
 });
 
 // logout.addEventListener('click', (e) => {
-  
+
 
 //     signOut(auth).then(() => {
 //         alert('user loged out ')
@@ -144,7 +166,14 @@ onAuthStateChanged(auth, (user) => {
 //         alert('Please try again')
 //     });
 // });
-
+function authErrorToTitleCase(str) {
+    return str
+        ?.replaceAll("auth/", "")
+        ?.replaceAll("-", " ")
+        ?.split(" ")
+        ?.map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
+        ?.join(" ");
+}
 
 
 function checkInfo() {
@@ -182,104 +211,120 @@ function checkInfo() {
 
 }
 
-const accountDetails =document.querySelector('.account-details')
+const accountDetails = document.querySelector('.account-details')
 
-// const setupUi =(user)=>{
-
-// if (user)
-// {
-//   const html = '<div> logged in as ${user.email} </div>'
-//   accountDetails.innerHTML =html;
-
-// }
-
-// else {
-//   accountDetails.innerHTML ='';
-
-// }
-
-// }
 
 
 BtnGoogleSignup.addEventListener('click', (e) => {
 
- 
-
-  signInWithPopup(auth, provider)
-  .then((result) => {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
-    // The signed-in user info.
-    const user = result.user;
- 
-    
-      // const html = `<div> logged in as ${user.email.value} </div>`;
-      // accountDetails.innerHTML = html;
-     
-   
-    
-  //     updateProfile(user,{
-  //       displayName: document.getElementById("firstNameSu").value
-  //  })
-        const dt = new Date();
-        const minutzformatted = dt.getMinutes() < 10 ? "0" + dt.getMinutes().toString() : dt.getMinutes().toString()
-        const dateData = dt.getDate().toString() + "/" + (dt.getMonth()+1).toString() + " - " + dt.getHours().toString() + ":" + minutzformatted +  " , " +  numtoday[dt.getDay()]
-      
 
 
-  
-      update(ref(database, 'users/' + user.uid), {
-    
-      last_login: dateData,
-      fullName: user.displayName,
-      email: user.email,
-      photo: user.photoURL,
-      
+    signInWithPopup(auth, provider)
+        .then((result) => {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            // The signed-in user info.
+            const user = result.user;
 
-  })
 
-  //form.classList.remove('PassMatchText')
-    notify("success",user.displayName+" loged successfuly")
-    setTimeout(() => {
-     window.location.replace("../html/index.html");
-    }, 1000)
+            const dt = new Date();
+            const minutzformatted = dt.getMinutes() < 10 ? "0" + dt.getMinutes().toString() : dt.getMinutes().toString()
+            const hourzformatted = dt.getHours() < 10 ? "0" + dt.getHours().toString() : dt.getHours().toString()
+            const dateData = numtoday[dt.getDay()] + " the " + dt.getDate().toString() + "/" + (dt.getMonth() + 1).toString() + " at " + hourzformatted + ":" + minutzformatted
 
-    
-    // ...
-  }).catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-   // const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
+            const userId = user.uid;
+            const dbRef = ref(getDatabase());
+            get(child(dbRef, `users/${userId}`)).then((snapshot) => {
+                if (snapshot.exists()) {
 
-    alert(errorMessage)
-    // ...
-  });
 
-  
-   // signInWithRedirect(auth, provider);
-  // getRedirectResult(auth)
-  // .then((result) => {
-  //   // This gives you a Google Access Token. You can use it to access Google APIs.
-  //   const credential = GoogleAuthProvider.credentialFromResult(result);
-  //   const token = credential.accessToken;
 
-  //   // The signed-in user info.
-  //   const user = result.user;
-  // }).catch((error) => {
-  //   // Handle Errors here.
-  //   const errorCode = error.code;
-  //   const errorMessage = error.message;
-  //   // The email of the user's account used.
-  //   const email = error.customData.email;
-  //   // The AuthCredential type that was used.
-  //   const credential = GoogleAuthProvider.credentialFromError(error);
-  //   // ...
-  // });
+                    update(ref(database, 'users/' + user.uid), {
+
+
+
+                        fullName: user.displayName,
+                        email: user.email,
+                        photo: user.photoURL,
+                        last_login: snapshot.val()?.current_login ? snapshot.val()?.current_login : dateData + " first login",
+                        current_login: dateData
+
+
+                    })
+
+
+
+                }
+
+
+
+                else {
+                    set(ref(database, 'users/' + user.uid), {
+
+
+
+                        fullName: user.displayName,
+                        email: user.email,
+                        photo: user.photoURL,
+                        last_login: snapshot.val()?.current_login ? snapshot.val()?.current_login : dateData + " first login",
+                        current_login: dateData
+
+
+                    })
+                }
+            }).catch((error) => {
+                console.error(error);
+            });
+
+
+
+
+
+
+
+
+            //form.classList.remove('PassMatchText')
+            notify("success", user.displayName + " loged successfuly")
+            setTimeout(() => {
+                window.location.replace("../html/index.html");
+            }, 1000)
+
+
+            // ...
+        }).catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            // const email = error.customData.email;
+            // The AuthCredential type that was used.
+            const credential = GoogleAuthProvider.credentialFromError(error);
+
+            alert(errorMessage)
+            // ...
+        });
+
+
+    // signInWithRedirect(auth, provider);
+    // getRedirectResult(auth)
+    // .then((result) => {
+    //   // This gives you a Google Access Token. You can use it to access Google APIs.
+    //   const credential = GoogleAuthProvider.credentialFromResult(result);
+    //   const token = credential.accessToken;
+
+    //   // The signed-in user info.
+    //   const user = result.user;
+    // }).catch((error) => {
+    //   // Handle Errors here.
+    //   const errorCode = error.code;
+    //   const errorMessage = error.message;
+    //   // The email of the user's account used.
+    //   const email = error.customData.email;
+    //   // The AuthCredential type that was used.
+    //   const credential = GoogleAuthProvider.credentialFromError(error);
+    //   // ...
+    // });
 });
 
 
@@ -292,6 +337,19 @@ function notify(type, message) {
         n.classList.add("notification", type);
         n.innerText = message;
         document.getElementById("notification-area").appendChild(n);
+        if (type === "error") {
+            var audio = new Audio('/sound/error.mp3');
+            audio.play();
+        }
+        else if (type === "info") {
+            var audio = new Audio("/sound/warning.mp3");
+            audio.play();
+            console.log('warning')
+        }
+        else if (type === "success") {
+            var audio = new Audio('/sound/success.mp3');
+            audio.play();
+        }
         setTimeout(() => {
             var notifications = document.getElementById("notification-area").getElementsByClassName("notification");
             for (let i = 0; i < notifications.length; i--) {
@@ -300,7 +358,7 @@ function notify(type, message) {
                     break;
                 }
             }
-        }, 5000);
+        }, 0);
     })();
 }
 
